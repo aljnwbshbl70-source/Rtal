@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETAL LOVE EXPERIENCE ✨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;500;700&display=swap');
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #0B0B0F 0%, #1A1A2E 100%);
+            color: #F5F5F5;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        /* توهج النيون الوردي */
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(255, 77, 141, 0.6), 0 0 20px rgba(255, 77, 141, 0.4);
+        }
+
+        /* أزرار كيوت مضيئة بوهج ناعم */
+        .cute-btn {
+            background: rgba(255, 77, 141, 0.15);
+            border: 2px solid rgba(255, 77, 141, 0.4);
+            color: #FF8FB1;
+            box-shadow: 0 0 15px rgba(255, 77, 141, 0.2);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(5px);
+        }
+
+        .cute-btn:hover {
+            background: rgba(255, 77, 141, 0.35);
+            border-color: #FF4D8D;
+            color: #ffffff;
+            box-shadow: 0 0 25px rgba(255, 77, 141, 0.6);
+            transform: scale(1.05) translateY(-2px);
+        }
+
+        .cute-btn:active {
+            transform: scale(0.95);
+            animation: pulse-heart 0.3s;
+        }
+
+        /* زر مميز بنفسجي نيون */
+        .special-btn {
+            background: rgba(168, 85, 247, 0.15);
+            border: 2px solid rgba(168, 85, 247, 0.4);
+            color: #C084FC;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .special-btn:hover {
+            background: rgba(168, 85, 247, 0.35);
+            border-color: #A855F7;
+            color: #ffffff;
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+            transform: scale(1.05) translateY(-2px);
+        }
+
+        /* نبضة قلب عند الضغط */
+        @keyframes pulse-heart {
+            0% { box-shadow: 0 0 0 0 rgba(255, 77, 141, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 77, 141, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 77, 141, 0); }
+        }
+
+        /* خلفية النجوم المتلألئة */
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+        }
+
+        /* القلوب المتحركة والصاعدة للأعلى */
+        .floating-heart {
+            position: absolute;
+            color: rgba(255, 77, 141, 0.45);
+            text-shadow: 0 0 8px rgba(255, 77, 141, 0.3);
+            pointer-events: none;
+            z-index: 1;
+            user-select: none;
+            animation: floatUp var(--duration) linear forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(105vh) translateX(0) scale(0.5);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(var(--drift)) scale(var(--scale));
+                opacity: 0;
+            }
+        }
+
+        /* انتقال ناعم للخطوات */
+        .step-container {
+            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideUpFade {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* حاوية زجاجية فخمة بلور مع إضاءة نيون خلفية خفيفة */
+        .glass-panel {
+            background: rgba(11, 11, 15, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5),
+                        inset 0 0 30px rgba(255, 77, 141, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="relative flex items-center justify-center min-h-screen w-full overflow-hidden">
+
+    <!-- النجوم المتلألئة في الخلفية -->
+    <div id="stars-container" class="absolute inset-0 pointer-events-none"></div>
+
+    <!-- القلوب المتساقطة والصاعدة -->
+    <div id="hearts-container" class="absolute inset-0 pointer-events-none"></div>
+
+    <!-- بطاقة المحتوى الرئيسية -->
+    <div class="glass-panel max-w-lg w-[90%] md:w-full p-8 md:p-10 rounded-3xl text-center z-10 border border-white/10 relative overflow-hidden">
+        
+        <!-- تأثير نبضة القلب المتوهجة بالخلفية لبطاقتنا -->
+        <div class="absolute -top-24 -left-24 w-48 h-48 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div id="app-content" class="step-container space-y-6">
+            <!-- سيتم تحميل المحتوى برمجياً هنا -->
+        </div>
+    </div>
+
+    <!-- تشغيل الموسيقى في الخلفية -->
+    <audio id="love-music" src="y1.mp3" loop preload="auto"></audio>
+
+    <!-- صوت click خفيف عند الضغط على الأزرار -->
+    <audio id="click-sound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-84.wav" preload="auto"></audio>
+
+    <script>
+        // إعداد النجوم الخلفية بشكل عشوائي
+        const starsContainer = document.getElementById('stars-container');
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+            starsContainer.appendChild(star);
+        }
+
+        // دالة إنشاء القلوب الطائرة
+        const heartsContainer = document.getElementById('hearts-container');
+        const heartEmojis = ['💖', '❤️', '💗', '🥹', '🫶🏻', '🥰', '😍', '🤭', '🪽', '🤍'];
+        function spawnHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            
+            const scale = Math.random() * 0.8 + 0.6;
+            const duration = Math.random() * 5 + 5; 
+            const drift = (Math.random() * 200 - 100) + 'px';
+            
+            heart.style.setProperty('--scale', scale);
+            heart.style.setProperty('--duration', duration + 's');
+            heart.style.setProperty('--drift', drift);
+            heart.style.fontSize = Math.random() * 1.5 + 1 + 'rem';
+            
+            heartsContainer.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
+        }
+
+        // توليد مستمر للقلوب
+        setInterval(spawnHeart, 350);
+
+        const bgMusic = document.getElementById('love-music');
+        const clickSound = document.getElementById('click-sound');
+
+        function playClickSound() {
+            clickSound.currentTime = 0;
+            clickSound.volume = 0.4;
+            clickSound.play().catch(e => console.log("Audio waiting for user gesture"));
+        }
+
+        let currentStep = 1;
+        let state = { giraOrThiga: '', willNotice: '', isImportant: '' };
+
+        function goToStep(stepNum) {
+            playClickSound();
+            currentStep = stepNum;
+            renderStep();
+        }
+
+        function renderStep() {
+            const container = document.getElementById('app-content');
+            
+            container.style.animation = 'none';
+            void container.offsetWidth; 
+            container.style.animation = 'slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+
+            let contentHTML = '';
+
+            switch(currentStep) {
+                case 1:
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">الخطوة الأولى 🟢</div>
+                        <h1 class="text-3xl font-bold mb-6 text-white leading-snug">جاهزة لمفاجأة ما تتكرر يا رتال؟ 🫶🏻</h1>
+                        <div class="flex justify-center mt-8">
+                            <button onclick="goToStep(2)" class="cute-btn font-semibold text-lg py-4 px-10 rounded-full">👉 ابدأ 😳</button>
+                        </div>
+                    `;
+                    break;
+                case 2:
+                    bgMusic.volume = 0.7;
+                    bgMusic.play().catch(err => console.log("Audio autoplay restriction"));
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة الثانية 🎵</div>
+                        <div class="my-4 text-5xl animate-pulse text-rose-500">💖</div>
+                        <h1 class="text-2xl font-semibold mb-6 text-[#FF8FB1] leading-relaxed">رتال… دخلتي قلبي بدون استئذان 😏</h1>
+                        <p class="text-gray-400 text-sm mb-6">تم تشغيل الموسيقى الخاصة بنا 🎵</p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(3)" class="cute-btn font-semibold text-lg py-3 px-10 rounded-full">👉 كمّل 🥺</button>
+                        </div>
+                    `;
+                    break;
+                case 3:
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة الثالثة 💌</div>
+                        <div class="space-y-4 text-lg text-gray-200 leading-relaxed font-medium">
+                            <p class="animate-pulse">"أحبك بطريقة ما تنفهم… بس تنحس 🤍"</p>
+                            <p class="text-rose-300">"وجودك يخلّي كل شيء أحلى"</p>
+                            <p class="text-purple-300">"حتى يومي العادي يصير جميل إذا أنتِ فيه"</p>
+                        </div>
+                        <div class="flex justify-center mt-8">
+                            <button onclick="goToStep(4)" class="cute-btn font-semibold py-3 px-10 rounded-full">👉 بعد؟ 🥺</button>
+                        </div>
+                    `;
+                    break;
+                case 4:
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة الرابعة 💖</div>
+                        <div class="bg-rose-950/40 border border-rose-500/30 p-6 rounded-2xl my-6">
+                            <h2 class="text-xl md:text-2xl font-bold text-white leading-relaxed">رتال… تعرفين قد إيش أحبك؟ 🤍</h2>
+                        </div>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(5)" class="cute-btn font-semibold text-lg py-3 px-10 rounded-full">👉 قول 🤔</button>
+                        </div>
+                    `;
+                    break;
+                case 5:
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة الخامسة 💗</div>
+                        <div class="space-y-4 text-lg text-gray-200 leading-relaxed font-medium">
+                            <p class="text-rose-200">"أحبك حب ثابت مهما تغير كل شيء"</p>
+                            <p class="text-pink-300">"أحبك كأنك الأمان الوحيد بحياتي"</p>
+                            <p class="text-white">"أحبك أكثر من كل التفاصيل الصغيرة اللي أحبها"</p>
+                        </div>
+                        <div class="flex justify-center mt-8">
+                            <button onclick="goToStep(6)" class="cute-btn font-semibold py-3 px-10 rounded-full">👉 لسا؟ 😶‍🌫️</button>
+                        </div>
+                    `;
+                    break;
+                case 6:
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة السادسة 😏</div>
+                        <h2 class="text-xl font-bold mb-6 text-white leading-relaxed">لو أقول لك إن في شيء أقوى جاي… تكملين؟ 😏</h2>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+                            <button onclick="goToStep(8)" class="cute-btn font-semibold py-3 px-8 rounded-full text-base">أكيد 🔥</button>
+                            <button onclick="goToStep(7)" class="bg-white/10 hover:bg-white/20 text-gray-300 font-semibold py-3 px-8 rounded-full text-base transition">لا تعبت 💤</button>
+                        </div>
+                    `;
+                    break;
+                case 7:
+                    contentHTML = `
+                        <div class="text-gray-500 font-bold tracking-widest text-sm mb-2 uppercase">استراحة 😴</div>
+                        <div class="my-4 text-5xl">💤</div>
+                        <h1 class="text-2xl font-bold mb-6 text-gray-300 leading-relaxed">تمام يا رتال 🤍 روحي ارتاحي… أهم شيء راحتك 💤</h1>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(6)" class="cute-btn font-semibold py-3 px-8 rounded-full text-sm">أمزح.. أبغى أكمل 🤭</button>
+                        </div>
+                    `;
+                    break;
+                case 8:
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">تفاعل الفضول 😈</div>
+                        <h2 class="text-xl font-bold mb-6 text-white leading-relaxed">طيب… غيرة ولا ثقة؟ 😏</h2>
+                        <div class="flex flex-col gap-3 max-w-xs mx-auto mt-6">
+                            <button onclick="selectGira('غيرة')" class="cute-btn font-semibold py-3 px-6 rounded-xl">😡 غيرة</button>
+                            <button onclick="selectGira('ثقة')" class="cute-btn font-semibold py-3 px-6 rounded-xl">🤍 ثقة</button>
+                            <button onclick="selectGira('الاثنين')" class="cute-btn font-semibold py-3 px-6 rounded-xl">😈 الاثنين</button>
+                        </div>
+                    `;
+                    break;
+                case 9:
+                    contentHTML = `
+                        <div class="text-amber-400 font-bold tracking-widest text-sm mb-2 uppercase">ردة فعل ⚠️</div>
+                        <div class="my-3 text-4xl">💡</div>
+                        <h1 class="text-2xl font-bold mb-4 text-[#FF8FB1] leading-relaxed">يا رتال 😂 إجابتك خطيرة</h1>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(10)" class="cute-btn font-semibold py-3 px-10 rounded-full">👉 كمّل 😒</button>
+                        </div>
+                    `;
+                    break;
+                case 10:
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة السابعة 🧠</div>
+                        <h2 class="text-xl font-bold mb-6 text-white leading-relaxed">لو ابتعدت عنك يوم… تلاحظيني؟ 🥺</h2>
+                        <div class="flex flex-col sm:flex-row justify-center gap-3 mt-6">
+                            <button onclick="selectNotice('أكيد')" class="cute-btn font-semibold py-3 px-6 rounded-full text-sm">أكيد 💔</button>
+                            <button onclick="selectNotice('يمكن')" class="cute-btn font-semibold py-3 px-6 rounded-full text-sm">يمكن 😶</button>
+                            <button onclick="selectNotice('لا')" class="cute-btn font-semibold py-3 px-6 rounded-full text-sm">لا 😏</button>
+                        </div>
+                    `;
+                    break;
+                case 11:
+                    let replyText = "";
+                    if (state.willNotice === 'أكيد') { replyText = "كنت أدري إنك تحسين فيني 🤍"; }
+                    else if (state.willNotice === 'يمكن') { replyText = "حتى لو شوي… هذا يكفيني"; }
+                    else { replyText = "كذابة 😂 مستحيل ما تلاحظين"; }
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">صدق المشاعر 💔</div>
+                        <h1 class="text-2xl font-bold mb-6 text-white leading-relaxed">${replyText}</h1>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(12)" class="cute-btn font-semibold py-3 px-10 rounded-full">👉 لسا في شيء؟ 😳</button>
+                        </div>
+                    `;
+                    break;
+                case 12:
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة الثامنة 💞</div>
+                        <h2 class="text-2xl font-bold mb-6 text-[#FF4D8D]">رتال… تعرفين وش أخطر شيء؟</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(13)" class="cute-btn font-semibold py-3 px-10 rounded-full text-lg">👉 وش؟ 🤔</button>
+                        </div>
+                    `;
+                    break;
+                case 13:
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة التاسعة 💗</div>
+                        <div class="space-y-4 text-lg text-gray-200 leading-relaxed font-medium">
+                            <p class="text-rose-300">"إنك صرتي عادة يومي"</p>
+                            <p class="text-pink-200">"وصعب أتصور يوم بدونك"</p>
+                            <p class="text-white">"وصوتك حتى لو تخيلته يطمني"</p>
+                        </div>
+                        <div class="flex justify-center mt-8">
+                            <button onclick="goToStep(14)" class="cute-btn font-semibold py-3 px-10 rounded-full">👉 بعد؟ 🥺</button>
+                        </div>
+                    `;
+                    break;
+                case 14:
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة العاشرة 🌙</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">طيب لو قلت لك إنك مو شخص عادي… بل كل شيء؟ 🤍</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(15)" class="cute-btn font-semibold py-3 px-10 rounded-full">👉 وضح 😳</button>
+                        </div>
+                    `;
+                    break;
+                case 15:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 11 🟣</div>
+                        <h2 class="text-xl font-bold mb-6 text-[#C084FC]">رتال… تبين تعرفين سر صغير؟ 🤫</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(16)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 قول</button>
+                        </div>
+                    `;
+                    break;
+                case 16:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 12 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">"أنا أبتسم بدون سبب… إلا لما أفتكر اسمك 🤍"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(17)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 صدق?</button>
+                        </div>
+                    `;
+                    break;
+                case 17:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 13 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">طيب لو قلت لك إنك السبب؟ 😏</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(18)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 وش يعني؟</button>
+                        </div>
+                    `;
+                    break;
+                case 18:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 14 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">"يعني حتى مزاجي يعتمد عليك بدون ما تدري 🤍"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(19)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 بعد؟</button>
+                        </div>
+                    `;
+                    break;
+                case 19:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 15 🟣</div>
+                        <h2 class="text-xl font-bold mb-6 text-white leading-relaxed">رتال، أنا مهم عندك ولا لا؟</h2>
+                        <div class="flex flex-col sm:flex-row justify-center gap-3 mt-6">
+                            <button onclick="selectImportance('نعم')" class="special-btn font-semibold py-3 px-8 rounded-full text-sm">نعم 🤍</button>
+                            <button onclick="selectImportance('شوي')" class="special-btn font-semibold py-3 px-8 rounded-full text-sm">شوي 😶</button>
+                            <button onclick="selectImportance('لا')" class="special-btn font-semibold py-3 px-8 rounded-full text-sm">لا 😏</button>
+                        </div>
+                    `;
+                    break;
+                case 20:
+                    let importanceReply = "";
+                    if (state.isImportant === 'نعم') { importanceReply = "كنت متأكد 🤍"; }
+                    else if (state.isImportant === 'شوي') { importanceReply = "شويك تكفيني"; }
+                    else { importanceReply = "كذابة 😂"; }
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 16 🟣</div>
+                        <h1 class="text-2xl font-bold mb-6 text-[#C084FC] leading-relaxed">${importanceReply}</h1>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(21)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 كمّل</button>
+                        </div>
+                    `;
+                    break;
+                case 21:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 17 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">لو اختفيت يوم… بتسألين عني؟ 🥺</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(22)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 أكيد</button>
+                        </div>
+                    `;
+                    break;
+                case 22:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 18 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-[#C084FC] leading-relaxed">"كنت أعرف إنك مو قادرة تنسين 🤍"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(23)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 ليش؟</button>
+                        </div>
+                    `;
+                    break;
+                case 23:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 19 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">"لأن بعض الأشخاص ما يننسون… يصيرون جزء من القلب"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(24)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 أنا منهم؟</button>
+                        </div>
+                    `;
+                    break;
+                case 24:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 20 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-[#C084FC] leading-relaxed">إيه… للأسف أو لحسن الحظ 😏</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(25)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 كيف يعني؟</button>
+                        </div>
+                    `;
+                    break;
+                case 25:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 21 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">"يعني لو حاولت أنساك… ما أقدر 🤍"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(26)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 بعد؟</button>
+                        </div>
+                    `;
+                    break;
+                case 26:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 22 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-bold mb-6 text-white leading-relaxed">"رتال… لو قلت لك أحبك أكثر من المتوقع؟"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(27)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 قد إيش؟</button>
+                        </div>
+                    `;
+                    break;
+                case 27:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 23 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">"أكثر من الكلام نفسه 🤍"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(28)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 مستحيل</button>
+                        </div>
+                    `;
+                    break;
+                case 28:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 24 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">"مو مستحيل… بس أنتِ ما جربتي الإحساس هذا 😏"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(29)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 جربني</button>
+                        </div>
+                    `;
+                    break;
+                case 29:
+                    bgMusic.volume = 0.45;
+                    for(let k=0; k<15; k++) { setTimeout(spawnHeart, k*150); }
+                    contentHTML = `
+                        <div class="text-rose-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 25 🟣</div>
+                        <div class="my-4 text-4xl animate-pulse text-rose-500">🤍</div>
+                        <h2 class="text-xl md:text-2xl font-bold mb-6 text-[#FF8FB1] leading-relaxed">"أنتِ مو شخص عادي… أنتِ إحساس كامل 🤍"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(30)" class="cute-btn font-semibold py-3 px-10 rounded-full">👉 بعد؟</button>
+                        </div>
+                    `;
+                    break;
+                case 30:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 26 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">"لو الدنيا كلها ضدك… أنا معك 🤍"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(31)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 حتى لو؟</button>
+                        </div>
+                    `;
+                    break;
+                case 31:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 27 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">"حتى لو كل شيء تغير… أنتِ ثابتة عندي"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(32)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 ليش أنا؟</button>
+                        </div>
+                    `;
+                    break;
+                case 32:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 28 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">"لأنك ببساطة… رتال 🤍"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(33)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 وش يعني؟</button>
+                        </div>
+                    `;
+                    break;
+                case 33:
+                    contentHTML = `
+                        <div class="text-purple-400 font-bold tracking-widest text-sm mb-2 uppercase">المرحلة 29 🟣</div>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6 text-white leading-relaxed">"يعني الاسم هذا صار يعني لي كل شيء"</h2>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(34)" class="special-btn font-semibold py-3 px-10 rounded-full">👉 بعد؟ 😳</button>
+                        </div>
+                    `;
+                    break;
+                case 34:
+                    bgMusic.volume = 0.9;
+                    setInterval(spawnHeart, 100);
+                    contentHTML = `
+                        <div class="text-rose-500 font-bold tracking-widest text-base mb-4 uppercase animate-pulse">النهاية الكبرى 🤍✨</div>
+                        <div class="text-4xl my-4 animate-bounce">👑</div>
+                        <div class="space-y-4 text-xl md:text-2xl font-bold leading-relaxed text-white">
+                            <p class="neon-glow text-rose-400">"رتال…"</p>
+                            <p>"أحبك بطريقة ما تنشرح 🤍"</p>
+                            <p class="text-purple-300">"أنتِ أجمل صدفة بحياتي"</p>
+                            <p class="text-rose-300">"وأغلى شعور ما ينتهي"</p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-rose-500/20 via-pink-500/20 to-purple-500/20 border-2 border-rose-500/50 p-6 md:p-8 rounded-2xl shadow-[0_0_30px_rgba(255,77,141,0.3)] mt-8 animate-pulse">
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-wide leading-snug">
+                                أحبك يا رتال… إلى الأبد 🤍✨
+                            </h2>
+                        </div>
+                        
+                        <div class="flex justify-center mt-8">
+                            <button onclick="restartApp()" class="cute-btn font-semibold py-2 px-6 rounded-full text-xs opacity-60 hover:opacity-100">إعادة الرحلة ↺</button>
+                        </div>
+                    `;
+                    break;
+            }
+
+            container.innerHTML = contentHTML;
+        }
+
+        function selectGira(choice) { state.giraOrThiga = choice; goToStep(9); }
+        function selectNotice(choice) { state.willNotice = choice; goToStep(11); }
+        function selectImportance(choice) { state.isImportant = choice; goToStep(20); }
+        function restartApp() { bgMusic.pause(); bgMusic.currentTime = 0; goToStep(1); }
+
+        window.onload = function() { renderStep(); }
+    </script>
+</body>
+</html>
