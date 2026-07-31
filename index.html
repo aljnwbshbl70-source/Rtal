@@ -3,102 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رحلة إنقاذ رتال ✨ | ملكة القدرات 👑</title>
+    <title>مملكة رتال الفاخرة ✨ | رحلة التفوق والإنقاذ 👑</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800&family=Reem+Kufi:wght@600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,700;1,400&display=swap');
         
+        :root {
+            --bg-main: linear-gradient(135deg, #090D16 0%, #111827 40%, #1F1133 100%);
+            --accent-pink: #F472B6;
+            --accent-purple: #C084FC;
+            --accent-cyan: #38BDF8;
+            --accent-gold: #FBBF24;
+        }
+
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #070B19 0%, #0F172A 50%, #1E102F 100%);
+            background: var(--bg-main);
             color: #F8FAFC;
             overflow-x: hidden;
             user-select: none;
             -webkit-user-select: none;
+            transition: background 0.8s ease;
         }
 
         h1, h2, h3, .font-cairo {
             font-family: 'Cairo', sans-serif;
         }
 
-        .font-reem {
-            font-family: 'Reem Kufi', sans-serif;
+        .font-amiri {
+            font-family: 'Amiri', serif;
         }
 
-        /* توهج النيون والوردي */
-        .neon-glow-pink {
-            text-shadow: 0 0 12px rgba(255, 105, 180, 0.7), 0 0 25px rgba(255, 105, 180, 0.4);
+        /* توهج النيون والجماليات */
+        .neon-text-pink {
+            text-shadow: 0 0 12px rgba(244, 114, 182, 0.7), 0 0 24px rgba(244, 114, 182, 0.4);
         }
 
-        .neon-glow-cyan {
-            text-shadow: 0 0 12px rgba(56, 189, 248, 0.7), 0 0 25px rgba(56, 189, 248, 0.4);
+        .neon-text-gold {
+            text-shadow: 0 0 12px rgba(251, 191, 36, 0.7), 0 0 24px rgba(251, 191, 36, 0.4);
         }
 
-        .neon-glow-gold {
-            text-shadow: 0 0 12px rgba(251, 191, 36, 0.7), 0 0 25px rgba(251, 191, 36, 0.4);
+        .neon-text-cyan {
+            text-shadow: 0 0 12px rgba(56, 189, 248, 0.7), 0 0 24px rgba(56, 189, 248, 0.4);
         }
 
-        /* أزرار مضيئة */
-        .cute-btn {
-            background: linear-gradient(135deg, rgba(244, 114, 182, 0.2) 0%, rgba(217, 70, 239, 0.25) 100%);
+        /* الأزرار التفاعلية المضيئة */
+        .btn-pink {
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.25) 0%, rgba(217, 70, 239, 0.3) 100%);
             border: 2px solid rgba(244, 114, 182, 0.5);
             color: #F472B6;
             box-shadow: 0 0 20px rgba(244, 114, 182, 0.25);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
         }
 
-        .cute-btn:hover {
-            background: linear-gradient(135deg, rgba(244, 114, 182, 0.4) 0%, rgba(217, 70, 239, 0.5) 100%);
+        .btn-pink:hover {
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.45) 0%, rgba(217, 70, 239, 0.55) 100%);
             border-color: #EC4899;
             color: #ffffff;
-            box-shadow: 0 0 30px rgba(244, 114, 182, 0.6);
+            box-shadow: 0 0 32px rgba(244, 114, 182, 0.7);
             transform: scale(1.04) translateY(-2px);
         }
 
-        .cute-btn:active {
-            transform: scale(0.96);
-        }
+        .btn-pink:active { transform: scale(0.96); }
 
-        .cyan-btn {
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(14, 165, 233, 0.3) 100%);
+        .btn-cyan {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.25) 0%, rgba(14, 165, 233, 0.3) 100%);
             border: 2px solid rgba(56, 189, 248, 0.5);
             color: #38BDF8;
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
         }
 
-        .cyan-btn:hover {
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.4) 0%, rgba(14, 165, 233, 0.5) 100%);
+        .btn-cyan:hover {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.45) 0%, rgba(14, 165, 233, 0.55) 100%);
             border-color: #38BDF8;
             color: #ffffff;
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+            box-shadow: 0 0 32px rgba(56, 189, 248, 0.7);
             transform: scale(1.04) translateY(-2px);
         }
 
-        .gold-btn {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.3) 100%);
+        .btn-gold {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.25) 0%, rgba(245, 158, 11, 0.3) 100%);
             border: 2px solid rgba(251, 191, 36, 0.5);
             color: #FBBF24;
             box-shadow: 0 0 20px rgba(251, 191, 36, 0.25);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
         }
 
-        .gold-btn:hover {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.4) 0%, rgba(245, 158, 11, 0.5) 100%);
+        .btn-gold:hover {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.45) 0%, rgba(245, 158, 11, 0.55) 100%);
             border-color: #F59E0B;
             color: #ffffff;
-            box-shadow: 0 0 30px rgba(251, 191, 36, 0.6);
+            box-shadow: 0 0 32px rgba(251, 191, 36, 0.7);
             transform: scale(1.04) translateY(-2px);
         }
 
-        /* خلفية النجوم والفقاعات */
+        .btn-purple {
+            background: linear-gradient(135deg, rgba(192, 132, 252, 0.25) 0%, rgba(168, 85, 247, 0.3) 100%);
+            border: 2px solid rgba(192, 132, 252, 0.5);
+            color: #C084FC;
+            box-shadow: 0 0 20px rgba(192, 132, 252, 0.25);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-purple:hover {
+            background: linear-gradient(135deg, rgba(192, 132, 252, 0.45) 0%, rgba(168, 85, 247, 0.55) 100%);
+            border-color: #A855F7;
+            color: #ffffff;
+            box-shadow: 0 0 32px rgba(192, 132, 252, 0.7);
+            transform: scale(1.04) translateY(-2px);
+        }
+
+        /* النجوم والجسيمات */
         .star {
             position: absolute;
             background-color: white;
@@ -110,22 +134,11 @@
 
         @keyframes twinkle {
             0%, 100% { opacity: 0.15; transform: scale(0.8); }
-            50% { opacity: 0.9; transform: scale(1.2); }
+            50% { opacity: 0.95; transform: scale(1.3); }
         }
 
-        .floating-bubble {
+        .floating-particle {
             position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), rgba(56, 189, 248, 0.1) 60%, rgba(236, 72, 153, 0.2));
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            pointer-events: none;
-            animation: floatUp var(--duration) linear forwards;
-        }
-
-        .floating-heart {
-            position: absolute;
-            color: rgba(244, 114, 182, 0.7);
-            filter: drop-shadow(0 0 6px rgba(244, 114, 182, 0.4));
             pointer-events: none;
             z-index: 1;
             animation: floatUp var(--duration) linear forwards;
@@ -144,15 +157,15 @@
             }
         }
 
-        /* أنيميشن الحاوية */
+        /* انيميشن انتقال الخطوات */
         .step-container {
-            animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: slideUpFade 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         @keyframes slideUpFade {
             0% {
                 opacity: 0;
-                transform: translateY(25px) scale(0.97);
+                transform: translateY(30px) scale(0.96);
             }
             100% {
                 opacity: 1;
@@ -160,41 +173,41 @@
             }
         }
 
-        /* لوحة Glassmorphism */
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.78);
+        /* كارت زجاجي */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.82);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.6),
+            box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.65),
                         inset 0 0 35px rgba(244, 114, 182, 0.06);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
         }
 
         /* دائرة التنفس */
-        .breath-circle {
+        .breath-ring {
             width: 140px;
             height: 140px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(244,114,182,0.4) 0%, rgba(56,189,248,0.2) 70%);
             border: 3px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 30px rgba(244, 114, 182, 0.5);
+            box-shadow: 0 0 35px rgba(244, 114, 182, 0.5);
             animation: breathe 8s ease-in-out infinite;
         }
 
         @keyframes breathe {
             0%, 100% { transform: scale(0.85); box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
-            50% { transform: scale(1.25); box-shadow: 0 0 45px rgba(244, 114, 182, 0.8); }
+            50% { transform: scale(1.25); box-shadow: 0 0 50px rgba(244, 114, 182, 0.85); }
         }
 
-        /* بطاقات تقليب الحظ */
-        .card-flip {
+        /* 3D Flip Cards */
+        .card-flip-container {
             perspective: 1000px;
         }
-        .card-inner {
+        .card-flip-inner {
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             transform-style: preserve-3d;
         }
-        .card-flip.flipped .card-inner {
+        .card-flip-container.flipped .card-flip-inner {
             transform: rotateY(180deg);
         }
         .card-front, .card-back {
@@ -204,53 +217,75 @@
         .card-back {
             transform: rotateY(180deg);
         }
+
+        /* فقاعات لعبة الضغط */
+        .bubble-pop {
+            transition: transform 0.15s ease, opacity 0.2s ease;
+            cursor: pointer;
+        }
+        .bubble-pop:active {
+            transform: scale(0.8);
+        }
+
+        /* عجلة الحظ */
+        .wheel-container {
+            transition: transform 3.5s cubic-bezier(0.15, 0.99, 0.24, 0.99);
+        }
     </style>
 </head>
 <body class="relative flex items-center justify-center min-h-screen w-full overflow-hidden">
 
-    <!-- النجوم والفقاعات في الخلفية -->
+    <!-- النجوم والجسيمات الخلفية -->
     <div id="stars-container" class="absolute inset-0 pointer-events-none z-0"></div>
     <div id="particles-container" class="absolute inset-0 pointer-events-none z-0"></div>
 
-    <!-- تشغيل الموسيقى الخاصة برتال y1.mp3 -->
+    <!-- تشغيل ملف الموسيقى الخاص بك y1.mp3 -->
     <audio id="love-music" src="y1.mp3" loop preload="auto"></audio>
 
-    <!-- مشغل الموسيقى والمؤثرات أعلى الصفحة -->
-    <div class="fixed top-4 left-4 right-4 md:left-auto md:right-6 z-50 flex items-center justify-between md:justify-end gap-3 bg-slate-900/80 border border-white/10 px-4 py-2.5 rounded-full backdrop-filter backdrop-blur-md shadow-lg">
-        <div class="flex items-center gap-2">
-            <button id="music-toggle-btn" onclick="toggleMusic()" class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/40 hover:scale-110 transition">
-                <span id="music-icon">🎵</span>
+    <!-- الهيدر العلوي: التحكم بالموسيقى والثيمات ومؤشر الإنجاز -->
+    <header class="fixed top-3 left-3 right-3 md:left-6 md:right-6 z-50 flex items-center justify-between gap-2 bg-slate-900/85 border border-white/10 px-4 py-2.5 rounded-full backdrop-blur-md shadow-2xl">
+        <div class="flex items-center gap-2.5">
+            <button id="music-btn" onclick="toggleMusic()" class="w-10 h-10 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/40 hover:scale-110 transition shadow-lg">
+                <span id="music-icon" class="text-lg">🎵</span>
             </button>
             <div class="text-xs text-right hidden sm:block">
-                <p class="font-bold text-pink-300">أغنيتنا الخاصة (y1.mp3) 🎵</p>
-                <p id="music-status" class="text-[10px] text-gray-400">انقر لتشغيل الأغنية</p>
+                <p class="font-bold text-pink-300">أغنية رتال المفضلة (y1.mp3) 🎵</p>
+                <p id="music-status" class="text-[10px] text-gray-400">انقري لفتح صوت السكينة والحب</p>
             </div>
         </div>
-        <div class="flex items-center gap-1.5 text-xs text-cyan-300 bg-cyan-950/40 px-3 py-1 rounded-full border border-cyan-500/30">
-            <span>مقياس الأمل:</span>
-            <span id="progress-percent" class="font-extrabold text-pink-400">0%</span>
-        </div>
-    </div>
 
-    <!-- بطاقة المحتوى الرئيسية -->
-    <main class="glass-panel max-w-xl w-[92%] md:w-full p-6 md:p-10 rounded-3xl text-center z-10 relative my-6 my-md-0 border border-white/10 overflow-hidden">
+        <!-- مغير الأجواء البصرية -->
+        <div class="flex items-center gap-1.5 bg-white/5 p-1 rounded-full border border-white/10">
+            <button onclick="setTheme('cosmos')" title="سماء الفضاء" class="w-5 h-5 rounded-full bg-gradient-to-tr from-purple-900 to-indigo-600 border border-white/30 hover:scale-110 transition"></button>
+            <button onclick="setTheme('rose')" title="حديقة الورود" class="w-5 h-5 rounded-full bg-gradient-to-tr from-rose-900 to-pink-500 border border-white/30 hover:scale-110 transition"></button>
+            <button onclick="setTheme('gold')" title="الشفق الذهبي" class="w-5 h-5 rounded-full bg-gradient-to-tr from-amber-900 to-yellow-500 border border-white/30 hover:scale-110 transition"></button>
+        </div>
+
+        <div class="flex items-center gap-2 bg-pink-950/40 px-3.5 py-1.5 rounded-full border border-pink-500/30 text-xs">
+            <span class="text-gray-300 hidden xs:inline">المرحلة:</span>
+            <span id="step-counter-text" class="font-extrabold text-pink-400">1 / 44</span>
+        </div>
+    </header>
+
+    <!-- البطاقة الرئيسية الواسعة -->
+    <main class="glass-card max-w-xl w-[92%] md:w-full p-6 md:p-9 rounded-3xl text-center z-10 relative my-10 border border-white/10 shadow-2xl overflow-hidden">
         
-        <!-- تأثيرات إضاءة متوهجة ناعمة خلف الكارت -->
-        <div class="absolute -top-28 -left-28 w-56 h-56 bg-pink-500/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-28 -right-28 w-56 h-56 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- توهج دافئ في الخلفية -->
+        <div class="absolute -top-32 -left-32 w-64 h-64 bg-pink-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-32 -right-32 w-64 h-64 bg-purple-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
-        <!-- شريط التقدم العلوي داخل الكارت -->
-        <div class="w-full bg-slate-800/80 h-1.5 rounded-full mb-6 overflow-hidden border border-white/5">
-            <div id="step-progress-bar" class="bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-500 h-full w-[3%] transition-all duration-500"></div>
+        <!-- شريط التقدم التفاعلي -->
+        <div class="w-full bg-slate-800/80 h-2 rounded-full mb-6 overflow-hidden border border-white/5 shadow-inner">
+            <div id="progress-bar-fill" class="bg-gradient-to-r from-cyan-400 via-pink-400 to-amber-400 h-full w-[2%] transition-all duration-500 shadow-[0_0_12px_rgba(244,114,182,0.8)]"></div>
         </div>
 
-        <div id="app-content" class="step-container space-y-6">
-            <!-- تحميل الخطوات برمجياً -->
+        <div id="app-viewport" class="step-container space-y-6">
+            <!-- سيتم تحميل المحتوى برمجياً هنا -->
         </div>
     </main>
 
     <script>
-        // === التحكم بموسيقى y1.mp3 والمؤثرات ===
+        // === التحكم بالصوت والموسيقى والمؤثرات ===
         const bgMusic = document.getElementById('love-music');
         let audioCtx = null;
         let isMusicPlaying = false;
@@ -275,16 +310,15 @@
                 btnIcon.innerText = "🎵";
                 statusText.innerText = "الموسيقى متوقفة";
             } else {
-                bgMusic.volume = 0.75;
+                bgMusic.volume = 0.8;
                 bgMusic.play().then(() => {
                     isMusicPlaying = true;
                     btnIcon.innerText = "🎶";
-                    statusText.innerText = "تذوقي النغمة الآن ✨";
-                }).catch(err => console.log("Audio autoplay restriction"));
+                    statusText.innerText = "أغنيتك تملأ المكان دفئاً ✨";
+                }).catch(e => console.log("User gesture needed"));
             }
         }
 
-        // إطلاق أصوات تفاعلية ناعمة عند النقر
         function playSound(type) {
             try {
                 initAudioContext();
@@ -294,80 +328,95 @@
                     const osc = audioCtx.createOscillator();
                     const gain = audioCtx.createGain();
                     osc.type = 'sine';
-                    osc.frequency.setValueAtTime(440, now);
-                    osc.frequency.exponentialRampToValueAtTime(880, now + 0.08);
+                    osc.frequency.setValueAtTime(460, now);
+                    osc.frequency.exponentialRampToValueAtTime(920, now + 0.08);
                     gain.gain.setValueAtTime(0.15, now);
                     gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
                     osc.connect(gain);
                     gain.connect(audioCtx.destination);
                     osc.start(now);
                     osc.stop(now + 0.08);
-                } else if (type === 'magic' || type === 'sparkle') {
-                    const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51];
-                    notes.forEach((freq, i) => {
-                        const osc = audioCtx.createOscillator();
-                        const gain = audioCtx.createGain();
-                        osc.type = 'triangle';
-                        osc.frequency.setValueAtTime(freq, now + i * 0.06);
-                        gain.gain.setValueAtTime(0.1, now + i * 0.06);
-                        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.06 + 0.25);
-                        osc.connect(gain);
-                        gain.connect(audioCtx.destination);
-                        osc.start(now + i * 0.06);
-                        osc.stop(now + i * 0.06 + 0.25);
-                    });
-                } else if (type === 'heart') {
+                } else if (type === 'pop') {
                     const osc = audioCtx.createOscillator();
                     const gain = audioCtx.createGain();
                     osc.type = 'sine';
-                    osc.frequency.setValueAtTime(220, now);
-                    osc.frequency.exponentialRampToValueAtTime(330, now + 0.15);
+                    osc.frequency.setValueAtTime(800, now);
+                    osc.frequency.exponentialRampToValueAtTime(300, now + 0.06);
                     gain.gain.setValueAtTime(0.2, now);
-                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.06);
                     osc.connect(gain);
                     gain.connect(audioCtx.destination);
                     osc.start(now);
-                    osc.stop(now + 0.2);
+                    osc.stop(now + 0.06);
+                } else if (type === 'magic') {
+                    const freqs = [523.25, 659.25, 783.99, 1046.50, 1318.51];
+                    freqs.forEach((f, i) => {
+                        const osc = audioCtx.createOscillator();
+                        const gain = audioCtx.createGain();
+                        osc.type = 'triangle';
+                        osc.frequency.setValueAtTime(f, now + i * 0.05);
+                        gain.gain.setValueAtTime(0.12, now + i * 0.05);
+                        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.05 + 0.25);
+                        osc.connect(gain);
+                        gain.connect(audioCtx.destination);
+                        osc.start(now + i * 0.05);
+                        osc.stop(now + i * 0.05 + 0.25);
+                    });
+                } else if (type === 'win') {
+                    const chord = [440, 554.37, 659.25, 880];
+                    chord.forEach((f) => {
+                        const osc = audioCtx.createOscillator();
+                        const gain = audioCtx.createGain();
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(f, now);
+                        gain.gain.setValueAtTime(0.15, now);
+                        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+                        osc.connect(gain);
+                        gain.connect(audioCtx.destination);
+                        osc.start(now);
+                        osc.stop(now + 0.8);
+                    });
                 }
-            } catch (e) {
-                console.log("Audio waiting for interaction");
+            } catch (e) {}
+        }
+
+        // === مغير الثيمات ===
+        function setTheme(t) {
+            playSound('click');
+            if (t === 'cosmos') {
+                document.documentElement.style.setProperty('--bg-main', 'linear-gradient(135deg, #090D16 0%, #111827 40%, #1F1133 100%)');
+            } else if (t === 'rose') {
+                document.documentElement.style.setProperty('--bg-main', 'linear-gradient(135deg, #1C0A19 0%, #2E0F2B 50%, #441228 100%)');
+            } else if (t === 'gold') {
+                document.documentElement.style.setProperty('--bg-main', 'linear-gradient(135deg, #191206 0%, #2A1D0B 50%, #3D220D 100%)');
             }
         }
 
-        // === إعداد خلفية النجوم والفقاعات ===
+        // === النجوم الخلفية والجسيمات ===
         const starsContainer = document.getElementById('stars-container');
         for (let i = 0; i < 75; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.width = Math.random() * 3 + 1 + 'px';
-            star.style.height = star.style.width;
-            star.style.top = Math.random() * 100 + 'vh';
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
-            starsContainer.appendChild(star);
+            const s = document.createElement('div');
+            s.className = 'star';
+            s.style.width = Math.random() * 3 + 1 + 'px';
+            s.style.height = s.style.width;
+            s.style.top = Math.random() * 100 + 'vh';
+            s.style.left = Math.random() * 100 + 'vw';
+            s.style.setProperty('--duration', Math.random() * 4 + 2 + 's');
+            starsContainer.appendChild(s);
         }
 
         const particlesContainer = document.getElementById('particles-container');
-        const particleIcons = ['🛟', '✨', '💖', '🌊', '👑', '🤍', '⭐', '🎈'];
+        const particleIcons = ['🛟', '✨', '💖', '👑', '🤍', '⭐', '🎈', '🏆', '🕊️', '🌸', '💫'];
         
         function spawnParticle() {
             const el = document.createElement('div');
-            const isBubble = Math.random() > 0.4;
-            
-            if (isBubble) {
-                el.className = 'floating-bubble';
-                const size = Math.random() * 25 + 10;
-                el.style.width = size + 'px';
-                el.style.height = size + 'px';
-            } else {
-                el.className = 'floating-heart';
-                el.innerHTML = particleIcons[Math.floor(Math.random() * particleIcons.length)];
-                el.style.fontSize = Math.random() * 1.2 + 0.9 + 'rem';
-            }
-
+            el.className = 'floating-particle';
+            el.innerHTML = particleIcons[Math.floor(Math.random() * particleIcons.length)];
+            el.style.fontSize = Math.random() * 1.3 + 0.8 + 'rem';
             el.style.left = Math.random() * 100 + 'vw';
-            const scale = Math.random() * 0.8 + 0.6;
-            const duration = Math.random() * 6 + 6; 
+            
+            const scale = Math.random() * 0.8 + 0.5;
+            const duration = Math.random() * 6 + 5.5; 
             const drift = (Math.random() * 160 - 80) + 'px';
             
             el.style.setProperty('--scale', scale);
@@ -377,123 +426,122 @@
             particlesContainer.appendChild(el);
             setTimeout(() => { el.remove(); }, duration * 1000);
         }
-
         setInterval(spawnParticle, 400);
 
-        // === حالة التطبيق والتنقل ===
+        // === متغيرات التطبيق والـ 44 فقرة ===
         let currentStep = 1;
-        const maxSteps = 20;
-        let state = {
-            oxygenLevel: 0,
+        const totalSteps = 44;
+        
+        let appData = {
+            bubblesPopped: 0,
+            starsCaught: 0,
+            memoryMatches: 0,
+            wheelResult: '',
             chosenSubject: '',
-            fearAnswer: '',
-            promiseMade: false,
-            cardsFlipped: 0
+            affirmationCount: 0,
+            loveScore: 100
         };
 
-        function goToStep(stepNum) {
+        function goToStep(s) {
             playSound('click');
-            if (stepNum === 2 && !isMusicPlaying) {
-                toggleMusic();
-            }
-            currentStep = stepNum;
+            if (s === 2 && !isMusicPlaying) toggleMusic();
+            currentStep = s;
             renderStep();
         }
 
         function updateProgress() {
-            const pct = Math.min(100, Math.round((currentStep / maxSteps) * 100));
-            document.getElementById('progress-percent').innerText = pct + '%';
-            document.getElementById('step-progress-bar').style.width = pct + '%';
+            document.getElementById('step-counter-text').innerText = `${currentStep} / ${totalSteps}`;
+            const pct = Math.min(100, Math.round((currentStep / totalSteps) * 100));
+            document.getElementById('progress-bar-fill').style.width = pct + '%';
         }
 
         function renderStep() {
             updateProgress();
-            const container = document.getElementById('app-content');
+            const container = document.getElementById('app-viewport');
             
             container.style.animation = 'none';
             void container.offsetWidth; 
             container.style.animation = 'slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards';
 
-            let contentHTML = '';
+            let html = '';
 
             switch(currentStep) {
+                // ================= PHASE 1: الإنقاذ والاحتواء العاطفي =================
                 case 1:
-                    contentHTML = `
-                        <div class="text-cyan-400 font-bold tracking-widest text-xs mb-1 uppercase">نداء استغاثة في بحر القدرات 🌊</div>
-                        <h1 class="text-2xl md:text-3xl font-bold mb-4 text-white leading-relaxed">
+                    html = `
+                        <div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">نداء استغاثة في بحر القدرات 🌊</div>
+                        <h1 class="text-2xl md:text-3xl font-extrabold text-white leading-relaxed">
                             "أنا غرقت في بحر القدرات.. أحد يسحبني!" 🥺💔
                         </h1>
-                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6">
-                            سمعت نداءك يا <span class="text-pink-400 font-bold">رتال</span>.. وجيت أركض بعالي الصوت! ما عاش من يخليك تغرقين وأنا موجود! 🛟✨
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed my-4">
+                            سمعت نداءك يا أميرة قلبي يا <span class="text-pink-400 font-bold">رتال</span>.. وجيت أركض بمليون طوق نجاة! ما عاش ولا كان من يتركك تغرقين وأنا حيّ! 🛟✨
                         </p>
                         <div class="my-6">
-                            <div class="w-24 h-24 mx-auto flex items-center justify-center bg-pink-500/10 rounded-full border-2 border-pink-500/40 animate-bounce">
+                            <div class="w-24 h-24 mx-auto flex items-center justify-center bg-pink-500/20 rounded-full border-2 border-pink-400 animate-bounce shadow-[0_0_25px_rgba(244,114,182,0.5)]">
                                 <span class="text-5xl">🛟</span>
                             </div>
                         </div>
                         <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(2); playSound('sparkle');" class="cute-btn font-extrabold text-base md:text-lg py-3.5 px-8 rounded-full flex items-center gap-2">
-                                <span>🤝 امسكي يدي والحقيني فورا!</span>
+                            <button onclick="goToStep(2); playSound('magic');" class="btn-pink font-extrabold text-base md:text-lg py-3.5 px-8 rounded-full">
+                                🤝 امسكي يدي الحين.. وببدأ أسحبك!
                             </button>
                         </div>
                     `;
                     break;
 
                 case 2:
-                    contentHTML = `
-                        <div class="text-pink-400 font-bold tracking-widest text-xs mb-1 uppercase">طوق النجاة الأول 🤍</div>
-                        <h2 class="text-2xl font-bold mb-4 text-pink-300">سحبتك للأمان خلاص.. خذي نفس عميق 🕊️</h2>
-                        <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-4">
-                            تم تشغيل أغنيتك المفضلة <span class="text-pink-400 font-bold">(y1.mp3)</span> 🎵
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 2 | طوق النجاة الأول 🤍</div>
+                        <h2 class="text-2xl font-bold text-pink-300">سحبتك للأمان خلاص.. خذي نفس عميق 🕊️</h2>
+                        <p class="text-gray-200 text-xs md:text-sm my-3">
+                            تم تشغيل أغنية السكينة الخاصة بك <span class="text-pink-400 font-bold">(y1.mp3)</span> 🎵
                         </p>
-                        
                         <div class="flex flex-col items-center justify-center my-6">
-                            <div class="breath-circle flex items-center justify-center text-white font-bold text-sm text-center px-4 shadow-lg">
+                            <div class="breath-ring flex items-center justify-center text-white font-bold text-sm text-center px-4">
                                 <span>شهـيق.. 🌬️<br><span class="text-xs font-normal text-pink-200">ثم زفيـر.. 🌸</span></span>
                             </div>
-                            <p class="text-xs text-gray-400 mt-4">لاحظي كيف الدائرة تتنفس.. تنفسي معها بهدوء ✨</p>
+                            <p class="text-xs text-gray-400 mt-4">لاحظي الدائرة وتعدلي بجلستك وتنفسي بروقان ✨</p>
                         </div>
-
                         <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(3)" class="cyan-btn font-bold text-base py-3 px-8 rounded-full">
-                                👉 حسيت بالهدوء.. كمل حنانك 🥺
+                            <button onclick="goToStep(3)" class="btn-cyan font-bold text-base py-3 px-8 rounded-full">
+                                👉 هديت شوي.. كمل حنانك 🥺
                             </button>
                         </div>
                     `;
                     break;
 
                 case 3:
-                    contentHTML = `
-                        <div class="text-purple-400 font-bold tracking-widest text-xs mb-1 uppercase">جرعة طمأنينة 💖</div>
-                        <h2 class="text-xl md:text-2xl font-bold mb-4 text-white">ليه خايفة يا رتال من "بحر" وأنتِ أساساً المحيط كُلّه؟ 🌊✨</h2>
-                        <div class="space-y-3 text-gray-200 text-sm md:text-base leading-relaxed bg-white/5 p-5 rounded-2xl border border-white/10 text-right">
-                            <p class="flex items-center gap-2">💎 <span class="text-pink-300">أولاً:</span> أنتِ أذكى بكثير مما تتخيلين لما تهدين.</p>
-                            <p class="flex items-center gap-2">💎 <span class="text-purple-300">ثانياً:</span> تعبك ومذاكرتك ما راح تروح هباءً أبداً.</p>
-                            <p class="flex items-center gap-2">💎 <span class="text-cyan-300">ثالثاً:</span> أنا ظهرك وسندك في كل خطوة بالقدرات.</p>
+                    html = `
+                        <div class="text-purple-400 font-bold tracking-widest text-xs uppercase">المرحلة 3 | الحقيقة الصادقة 💎</div>
+                        <h2 class="text-xl md:text-2xl font-bold text-white mb-4">تدرين ليه كلمة "غرقت" ما تليق عليك يا رتال؟</h2>
+                        <div class="space-y-3 text-right text-xs md:text-sm text-gray-200 bg-white/5 p-5 rounded-2xl border border-white/10">
+                            <p>💎 لأن عيونك وعقلك أصلاً أعمق من كل اختبارات الدنيا.</p>
+                            <p>💎 لأن التعب اللي حاسّة فيه الحين دليل إنك شخص يسعى ويحاول بجدية.</p>
+                            <p>💎 ولأن معك شخص مستعد يحارب العالم بس عشان ابتسامتك!</p>
                         </div>
                         <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(4)" class="cute-btn font-bold py-3 px-8 rounded-full">
-                                👉 كلامك يدخل القلب.. بعد؟ 🥹
+                            <button onclick="goToStep(4)" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 بعد يا قلبي؟ 🥹
                             </button>
                         </div>
                     `;
                     break;
 
                 case 4:
-                    contentHTML = `
-                        <div class="text-amber-400 font-bold tracking-widest text-xs mb-1 uppercase">تحديد مكان التعب 🔍</div>
-                        <h2 class="text-xl font-bold mb-4 text-white">وش الجزء اللي حاسّة إنه هو اللي يغرقك بالقدرات يا رتال؟ 🤔</h2>
-                        <div class="flex flex-col gap-3 max-w-sm mx-auto my-6">
-                            <button onclick="state.chosenSubject='الكمي'; goToStep(5);" class="cyan-btn font-bold py-3.5 px-6 rounded-2xl text-base flex items-center justify-between">
-                                <span>📐 الجزء الكمي (الرياضيات والأرقام)</span>
+                    html = `
+                        <div class="text-amber-400 font-bold tracking-widest text-xs uppercase">المرحلة 4 | استكشاف التعب 🔍</div>
+                        <h2 class="text-xl font-bold text-white mb-4">وش الجزء اللي محرك خوفك بالقدرات أكثر يا رتول؟</h2>
+                        <div class="flex flex-col gap-3 max-w-sm mx-auto my-4">
+                            <button onclick="appData.chosenSubject='الكمي'; goToStep(5);" class="btn-cyan font-bold py-3 px-6 rounded-2xl flex items-center justify-between">
+                                <span>📐 الجزء الكمي والأرقام</span>
                                 <span>📊</span>
                             </button>
-                            <button onclick="state.chosenSubject='اللفظي'; goToStep(5);" class="cute-btn font-bold py-3.5 px-6 rounded-2xl text-base flex items-center justify-between">
-                                <span>📚 الجزء اللفظي (التناظر واستيعاب المقروء)</span>
+                            <button onclick="appData.chosenSubject='اللفظي'; goToStep(5);" class="btn-pink font-bold py-3 px-6 rounded-2xl flex items-center justify-between">
+                                <span>📚 الجزء اللفظي والنصوص</span>
                                 <span>📖</span>
                             </button>
-                            <button onclick="state.chosenSubject='الكل'; goToStep(5);" class="gold-btn font-bold py-3.5 px-6 rounded-2xl text-base flex items-center justify-between">
-                                <span>😵‍💫 الاثنين كلهم مسببين لي زحمة!</span>
+                            <button onclick="appData.chosenSubject='الكل'; goToStep(5);" class="btn-gold font-bold py-3 px-6 rounded-2xl flex items-center justify-between">
+                                <span>😵‍💫 زحمة المادة كلها على بعضها!</span>
                                 <span>🔥</span>
                             </button>
                         </div>
@@ -501,359 +549,770 @@
                     break;
 
                 case 5:
-                    let subjectAdvice = "";
-                    if (state.chosenSubject === 'الكمي') {
-                        subjectAdvice = "الكمي مجرد قوانين ولعب بالأرقام.. وعقلك الناعم هذا يقدر يفكك أصعب مسألة بلمسة هدوء! 🧮✨";
-                    } else if (state.chosenSubject === 'اللفظي') {
-                        subjectAdvice = "أنتِ أميرة الحرف والجمال! اللفظي لعبتك لأنك تفهمين الأحاسيس والكلمات قبل القواعد! 📖💖";
-                    } else {
-                        subjectAdvice = "حتى لو الاثنين مع بعض، حبة حبة ونفكك وحش القدرات هذا ونخليه يتوسل لك! 🔥👑";
-                    }
-                    contentHTML = `
-                        <div class="text-pink-400 font-bold tracking-widest text-xs mb-1 uppercase">فك الشفرة 🗝️</div>
+                    let advice = appData.chosenSubject === 'الكمي' 
+                        ? 'الكمي مجرد أرقام وقوانين ثابتة.. وعقلك الناعم يقدر يحل أعتى مسألة بلمسة روقان! 🧮✨'
+                        : appData.chosenSubject === 'اللفظي'
+                        ? 'أنتِ ملكة الكلمة والشعور.. اللفظي مجرد استيعاب وفهم واستنتاج، وأنتِ أستاذة فيه! 📖💖'
+                        : 'حتى لو زحمة، بنفكك الحزمة الكبيرة لحبات صغيرة ونسيطر عليها خطوة خطوة! 👑💥';
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 5 | فك الشفرة 🗝️</div>
                         <div class="my-3 text-4xl animate-bounce">💡</div>
-                        <h2 class="text-xl md:text-2xl font-bold mb-4 text-pink-300 leading-relaxed">${subjectAdvice}</h2>
-                        <p class="text-gray-300 text-sm mb-6">يا رتال، لا تقيسين قيمتك باختبار.. لكن قيسي الاختبار بقدرتك على اكتشافه وتحديه!</p>
+                        <h2 class="text-xl font-bold text-pink-300 leading-relaxed mb-4">${advice}</h2>
+                        <p class="text-xs text-gray-300 mb-6">تذكري: القدرات اختبار يقيس تدريبك، مو قيمتك ولا ذكائك الحقيقي!</p>
                         <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(6)" class="cute-btn font-bold py-3 px-8 rounded-full">
-                                👉 صح والله.. كمّل تحفيزك 🥺
+                            <button onclick="goToStep(6)" class="btn-purple font-bold py-3 px-8 rounded-full">
+                                👉 صح كلامك.. كمل! 🥺
                             </button>
                         </div>
                     `;
                     break;
 
                 case 6:
-                    contentHTML = `
-                        <div class="text-cyan-400 font-bold tracking-widest text-xs mb-1 uppercase">مرحلة شحن أكسجين الحب 💨</div>
-                        <h2 class="text-xl font-bold mb-2 text-white">انقري على القلب لتعبئة خزّان أكسجين الأمل والإنقاذ لـ رتال 🛟</h2>
-                        <p class="text-xs text-cyan-300 mb-4">حجم الخزان الحالي: <span id="oxygen-val" class="text-lg font-bold text-pink-400">${state.oxygenLevel}%</span></p>
-                        
-                        <div class="my-6">
-                            <button onclick="boostOxygen()" class="w-28 h-28 mx-auto flex flex-col items-center justify-center bg-gradient-to-tr from-pink-500/30 to-cyan-500/30 rounded-full border-2 border-pink-400 shadow-[0_0_25px_rgba(244,114,182,0.4)] active:scale-90 transition transform">
-                                <span class="text-4xl">💖</span>
-                                <span class="text-[10px] font-bold text-white mt-1">اضغطي هنا!</span>
-                            </button>
-                        </div>
-
-                        <div id="oxygen-next-btn" class="hidden flex justify-center mt-6">
-                            <button onclick="goToStep(7); playSound('magic');" class="gold-btn font-bold py-3 px-8 rounded-full animate-pulse">
-                                ✨ الخزان امتلأ بالأمل! اضغطي للمتابعة ✨
+                    html = `
+                        <div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">المرحلة 6 | تفريغ الشحنات 💆‍♀️</div>
+                        <h2 class="text-xl font-bold text-white mb-2">رتال.. تعالي نصفي ذهنك قبل الألعاب!</h2>
+                        <p class="text-gray-300 text-xs md:text-sm leading-relaxed my-4">
+                            غمضي عيونك ثانيتين.. تخيلي إنك خلّصتي الاختبار وتناظرين في الشاشة والنتيجة 100%.. وش أول شيء بتسوينه؟ 🎓✨
+                        </p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(7)" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 ببتسم وأضمك بلهفة! 🥹
                             </button>
                         </div>
                     `;
                     break;
 
                 case 7:
-                    contentHTML = `
-                        <div class="text-pink-400 font-bold tracking-widest text-xs mb-1 uppercase">المرحلة 7 | جرعة حب حنونة 💌</div>
-                        <div class="space-y-4 text-base md:text-lg text-gray-100 leading-relaxed font-medium">
-                            <p class="bg-pink-950/40 border border-pink-500/30 p-4 rounded-2xl text-pink-200">
-                                "رتال… تدرين إن تعبك هذا الحين هو اللي بيصنع لحظة الفرحة الكبيرة بالـ 100%؟ 🎓✨"
-                            </p>
-                            <p class="bg-purple-950/40 border border-purple-500/30 p-4 rounded-2xl text-purple-200">
-                                "لما تتعبين، تذكري إن فيه قلب يدعي لك بكل ثانية، ومتأكد إنك بطلة 🤍"
-                            </p>
-                        </div>
+                    html = `
+                        <div class="text-gold-400 font-bold tracking-widest text-xs uppercase">المرحلة 7 | ردة الفعل السريعة 🫂</div>
+                        <div class="my-3 text-5xl animate-bounce">🥹</div>
+                        <h2 class="text-2xl font-bold text-gold-300 mb-3">وأنا بضمك حييييل وأرفعك للسما فخراً بك!</h2>
+                        <p class="text-gray-200 text-sm mb-6">هذه اللحظة قادمة لا محالة.. يلا ببدأ ادربك بألعاب خفيفة لتنعيم مخك ✨</p>
                         <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(8)" class="cute-btn font-bold py-3 px-8 rounded-full">
-                                👉 فديتك.. وش جاي بعد؟ 🥺
+                            <button onclick="goToStep(8)" class="btn-cyan font-bold py-3 px-8 rounded-full">
+                                👉 يلا نلعب ورني! 🎮
                             </button>
                         </div>
                     `;
                     break;
 
+                // ================= PHASE 2: الألعاب التفاعلية والألغاز (Steps 8-15) =================
                 case 8:
-                    contentHTML = `
-                        <div class="text-purple-400 font-bold tracking-widest text-xs mb-1 uppercase">سؤال عابر بيننا 🤫</div>
-                        <h2 class="text-xl font-bold mb-4 text-white">لو قلتي "أنا تعبت وخايفة".. وش تعتقدين تكون ردة فعلي أول ما أسمعك؟</h2>
-                        <div class="flex flex-col gap-3 max-w-sm mx-auto my-6">
-                            <button onclick="state.fearAnswer='حضن'; goToStep(9);" class="cute-btn font-semibold py-3 px-6 rounded-2xl text-sm">
-                                🫂 أضمّك وأقولك كل شيء بيهون ويا رتول
-                            </button>
-                            <button onclick="state.fearAnswer='حلول'; goToStep(9);" class="cyan-btn font-semibold py-3 px-6 rounded-2xl text-sm">
-                                ✍️ أجلس معك ونقسّم المذاكرة حبة حبة
-                            </button>
-                            <button onclick="state.fearAnswer='كلها'; goToStep(9);" class="gold-btn font-semibold py-3 px-6 rounded-2xl text-sm">
-                                👑 الاثنين مع بعض بدون تردد!
+                    // لعبة 1: فرقعة فقاعات التوتر
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 8 | لعبة فرقعة التوتر 🫧</div>
+                        <h2 class="text-xl font-bold text-white mb-2">فرقعي فقاعات الأسئلة والتعب يا رتال!</h2>
+                        <p class="text-xs text-pink-300 mb-4">عدد الفقاعات المفرقعة: <span id="pop-count" class="font-bold text-lg text-amber-300">${appData.bubblesPopped}</span> / 6</p>
+
+                        <div class="grid grid-cols-3 gap-4 my-6 max-w-xs mx-auto">
+                            ${[1,2,3,4,5,6].map(i => `
+                                <div id="bubble-${i}" onclick="popBubble(${i})" class="bubble-pop w-16 h-16 mx-auto bg-gradient-to-tr from-pink-500/30 to-cyan-500/30 rounded-full border-2 border-pink-400 flex items-center justify-center text-2xl shadow-lg">
+                                    🫧
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <div id="pop-next-btn" class="${appData.bubblesPopped >= 6 ? '' : 'hidden'} flex justify-center mt-6">
+                            <button onclick="goToStep(9); playSound('win');" class="btn-gold font-bold py-3 px-8 rounded-full animate-bounce">
+                                ✨ يابطلة! تم طرد التوتر.. كملي ✨
                             </button>
                         </div>
                     `;
                     break;
 
                 case 9:
-                    contentHTML = `
-                        <div class="text-gold-400 font-bold tracking-widest text-xs mb-1 uppercase">الإجابة الصادقة 💎</div>
-                        <div class="my-3 text-4xl">✨</div>
-                        <h2 class="text-2xl font-bold mb-4 text-pink-300">بالضبط! إجابتك صحيحة 100% 🤍</h2>
-                        <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-6">
-                            ما راح أخليك تعانين لحالك أبداً. تعبك هو تعبي، ونجاحك وفرحتك هي أعظم إنجاز بحياتي يا رتال! 🌸
+                    html = `
+                        <div class="text-purple-400 font-bold tracking-widest text-xs uppercase">المرحلة 9 | استراحة المحارب ☕</div>
+                        <h2 class="text-xl font-bold text-purple-300 mb-4">شفتي كيف فرقعتيهم بثواني؟</h2>
+                        <p class="text-gray-200 text-sm leading-relaxed mb-6">
+                            نفس الشيء بأسئلة القدرات، مع التدريب والروقان بتفرقعين الاختيارات الصحيحة بلمسة زر! 🎯
                         </p>
                         <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(10)" class="cute-btn font-bold py-3 px-8 rounded-full">
-                                👉 كمّل الرحلة الحلوة 🥺
+                            <button onclick="goToStep(10)" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 هاتي اللعبة الثانية! 😈
                             </button>
                         </div>
                     `;
                     break;
 
                 case 10:
-                    contentHTML = `
-                        <div class="text-cyan-400 font-bold tracking-widest text-xs mb-1 uppercase">بطاقات الحظ والتحفيز 🃏</div>
-                        <h2 class="text-xl font-bold mb-2 text-white">اقلبي البطاقات التالية لاكتشاف سر طاقتك اليوم يا رتال:</h2>
-                        <p class="text-xs text-gray-300 mb-4">اضغطي على البطاقة لقلبها ✨</p>
+                    // لعبة 2: تجميع نجوم الثقة
+                    html = `
+                        <div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">المرحلة 10 | لعبة تجميع النجوم ⭐</div>
+                        <h2 class="text-xl font-bold text-white mb-2">جمعي 5 نجوم ثقة بالنفس بالنقر عليها!</h2>
+                        <p class="text-xs text-cyan-300 mb-4">النجوم المجمعة: <span id="star-count" class="font-bold text-lg text-gold-300">${appData.starsCaught}</span> / 5</p>
 
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-                            <div class="card-flip cursor-pointer h-36" onclick="flipCard(this)">
-                                <div class="card-inner relative w-full h-full rounded-2xl border border-pink-500/40 bg-pink-950/30 flex items-center justify-center p-4">
-                                    <div class="card-front absolute inset-0 flex items-center justify-center font-bold text-pink-300 text-lg">
-                                        🃏 بطاقة 1
-                                    </div>
-                                    <div class="card-back absolute inset-0 flex items-center justify-center p-3 text-xs md:text-sm font-bold text-white bg-pink-600/40 rounded-2xl border border-pink-400">
-                                        🌸 عقلك يستوعب أكثر مما تتخيلين! ركزي بهدوء.
-                                    </div>
-                                </div>
+                        <div class="relative h-44 w-full bg-slate-900/60 rounded-2xl border border-white/10 overflow-hidden my-4 flex items-center justify-center">
+                            <div id="clickable-star" onclick="catchStar()" class="absolute cursor-pointer text-4xl transition-all duration-300 animate-bounce" style="top: 30%; left: 40%;">
+                                ⭐
                             </div>
-
-                            <div class="card-flip cursor-pointer h-36" onclick="flipCard(this)">
-                                <div class="card-inner relative w-full h-full rounded-2xl border border-cyan-500/40 bg-cyan-950/30 flex items-center justify-center p-4">
-                                    <div class="card-front absolute inset-0 flex items-center justify-center font-bold text-cyan-300 text-lg">
-                                        🃏 بطاقة 2
-                                    </div>
-                                    <div class="card-back absolute inset-0 flex items-center justify-center p-3 text-xs md:text-sm font-bold text-white bg-cyan-600/40 rounded-2xl border border-cyan-400">
-                                        ⭐ 90% من خوف القدرات وهم، وأنتِ أقوى منه!
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-flip cursor-pointer h-36" onclick="flipCard(this)">
-                                <div class="card-inner relative w-full h-full rounded-2xl border border-amber-500/40 bg-amber-950/30 flex items-center justify-center p-4">
-                                    <div class="card-front absolute inset-0 flex items-center justify-center font-bold text-amber-300 text-lg">
-                                        🃏 بطاقة 3
-                                    </div>
-                                    <div class="card-back absolute inset-0 flex items-center justify-center p-3 text-xs md:text-sm font-bold text-white bg-amber-600/40 rounded-2xl border border-amber-400">
-                                        👑 الدرجة العالية تنتظرك لتكتمل فرحتك وفرحتي!
-                                    </div>
-                                </div>
-                            </div>
+                            <p class="text-xs text-gray-400">انقري النجمة المضيئة سريعاً!</p>
                         </div>
 
-                        <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(11)" class="gold-btn font-bold py-3 px-8 rounded-full">
-                                👉 قلبت البطاقات.. كمل! ✨
+                        <div id="star-next-btn" class="${appData.starsCaught >= 5 ? '' : 'hidden'} flex justify-center mt-4">
+                            <button onclick="goToStep(11); playSound('win');" class="btn-gold font-bold py-3 px-8 rounded-full">
+                                🌟 جمعتي كل نجوم الثقة! اضغطي للمتابعة
                             </button>
                         </div>
                     `;
                     break;
 
                 case 11:
-                    contentHTML = `
-                        <div class="text-pink-400 font-bold tracking-widest text-xs mb-1 uppercase">سر الدلع والاهتمام 🌸</div>
-                        <h2 class="text-xl md:text-2xl font-bold mb-4 text-white">تدرين وش أكثر شيء يعجبني فيك وأنتِ تذاكرين؟ 🥹</h2>
-                        <div class="space-y-3 text-gray-200 text-sm md:text-base leading-relaxed bg-pink-950/20 p-5 rounded-2xl border border-pink-500/20">
-                            <p class="text-pink-200">"إصرارك الخفي.. انك لما تقررين توصلين لشيء تقدرين عليه!"</p>
-                            <p class="text-purple-200">"ملامحك وأنتِ مركزة تجنن حتى لو كنتِ معصبة من المسائل 😏"</p>
-                        </div>
+                    html = `
+                        <div class="text-gold-400 font-bold tracking-widest text-xs uppercase">المرحلة 11 | سر النجوم 💫</div>
+                        <h2 class="text-xl md:text-2xl font-bold text-gold-300 mb-4">النجوم اللي جمعتيها هي طاقتك الحقيقية يا رتال!</h2>
+                        <p class="text-gray-200 text-sm leading-relaxed mb-6">
+                            مهما حسيتي بالتشتت، تذكري إن النور موجود في داخلك دائماً، وأنا هنا لأذكّرك فيه بثرثرتي وحبي! 🤍
+                        </p>
                         <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(12)" class="cute-btn font-bold py-3 px-8 rounded-full">
-                                👉 يا عيني.. بعد؟ 😳
+                            <button onclick="goToStep(12)" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 كمل العابك التفاعلية! 🥺
                             </button>
                         </div>
                     `;
                     break;
 
                 case 12:
-                    contentHTML = `
-                        <div class="text-cyan-400 font-bold tracking-widest text-xs mb-1 uppercase">قانون الـ 100% الخاص بـ رتال 📈</div>
-                        <h2 class="text-xl font-bold mb-4 text-white">قوانين القدرات السحرية لمعالي الملكة رتال 👑:</h2>
-                        <div class="space-y-3 text-right text-xs md:text-sm text-gray-200">
-                            <div class="bg-slate-900/60 p-3.5 rounded-xl border border-white/10 flex items-center gap-3">
-                                <span class="text-xl">1️⃣</span>
-                                <span>إذا شفتي سؤال صعب، خذي نفس وقلولي: "أنا أذكى منك يا سؤال!" 🧠</span>
-                            </div>
-                            <div class="bg-slate-900/60 p-3.5 rounded-xl border border-white/10 flex items-center gap-3">
-                                <span class="text-xl">2️⃣</span>
-                                <span>الراحة والإنعاش أصل التفوق.. لا تضغطين على نفسك فوق طاقتها ☕</span>
-                            </div>
-                            <div class="bg-slate-900/60 p-3.5 rounded-xl border border-white/10 flex items-center gap-3">
-                                <span class="text-xl">3️⃣</span>
-                                <span>تذكري إن فيه شخص يحبك ويتمنى لك القمة دائماً 🤍</span>
-                            </div>
+                    // لعبة 3: لعبة المطابقة والذاكرة الملكية
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 12 | لعبة مطابقة الرموز 🧠</div>
+                        <h2 class="text-xl font-bold text-white mb-2">طابقي الكروت المتشابهة لفتح بوابة الحظ!</h2>
+                        <p class="text-xs text-pink-300 mb-4">المطابقات: <span id="mem-count" class="font-bold text-lg text-pink-400">${appData.memoryMatches}</span> / 2</p>
+
+                        <div class="grid grid-cols-4 gap-3 my-4 max-w-xs mx-auto">
+                            <div onclick="flipMemCard(this, '👑')" class="mem-card h-16 bg-slate-800 rounded-xl border border-pink-500/40 flex items-center justify-center text-2xl cursor-pointer">❓</div>
+                            <div onclick="flipMemCard(this, '💖')" class="mem-card h-16 bg-slate-800 rounded-xl border border-pink-500/40 flex items-center justify-center text-2xl cursor-pointer">❓</div>
+                            <div onclick="flipMemCard(this, '👑')" class="mem-card h-16 bg-slate-800 rounded-xl border border-pink-500/40 flex items-center justify-center text-2xl cursor-pointer">❓</div>
+                            <div onclick="flipMemCard(this, '💖')" class="mem-card h-16 bg-slate-800 rounded-xl border border-pink-500/40 flex items-center justify-center text-2xl cursor-pointer">❓</div>
                         </div>
-                        <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(13)" class="cyan-btn font-bold py-3 px-8 rounded-full">
-                                👉 حفظت القوانين.. كمل! 🫡
+
+                        <div id="mem-next-btn" class="${appData.memoryMatches >= 2 ? '' : 'hidden'} flex justify-center mt-6">
+                            <button onclick="goToStep(13); playSound('win');" class="btn-cyan font-bold py-3 px-8 rounded-full animate-bounce">
+                                👑 ذاكرتك ممتازة! واصلي للقمة
                             </button>
                         </div>
                     `;
                     break;
 
                 case 13:
-                    contentHTML = `
-                        <div class="text-purple-400 font-bold tracking-widest text-xs mb-1 uppercase">المرحلة 13 | بوست الحب والرعاية 🫂</div>
-                        <div class="my-4 text-5xl animate-bounce">🥹</div>
-                        <h2 class="text-xl md:text-2xl font-bold mb-4 text-purple-300">رتال.. توعديني ما تقولين "أنا غرقت" مرة ثانية؟</h2>
-                        <p class="text-gray-300 text-sm mb-6">لأن أي بحر تقربين منه، بصير لك فيه الجسر والأنقاذ والأمان 🤍✨</p>
-                        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-                            <button onclick="state.promiseMade=true; goToStep(14);" class="cute-btn font-bold py-3.5 px-8 rounded-full text-base">
-                                ✋ أوعدك يا حنوني! 🤍
-                            </button>
-                            <button onclick="goToStep(14)" class="cyan-btn font-bold py-3.5 px-8 rounded-full text-base">
-                                🤭 أوعدك بس بشرط تظل معي!
+                    html = `
+                        <div class="text-purple-400 font-bold tracking-widest text-xs uppercase">المرحلة 13 | شهادة الذكاء 🧠</div>
+                        <div class="my-3 text-4xl">👑</div>
+                        <h2 class="text-2xl font-bold text-purple-300 mb-4">شفتي كيف ذاكرتك وسرعة البديهة عندك؟</h2>
+                        <p class="text-gray-200 text-sm leading-relaxed mb-6">
+                            اللي فاز بالألعاب فوق يقدر يقفل على أسئلة التناظر والكمي بلمح البصر!
+                        </p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(14)" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 الحين عطني كروت الحظ! 🃏
                             </button>
                         </div>
                     `;
                     break;
 
                 case 14:
-                    contentHTML = `
-                        <div class="text-pink-400 font-bold tracking-widest text-xs mb-1 uppercase">وعد للأبد 💍</div>
-                        <div class="my-3 text-4xl">🕊️</div>
-                        <h2 class="text-2xl font-bold mb-4 text-pink-300">أنا معك في كل لحظة وفي كل اختبار 🤍</h2>
-                        <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-6">
-                            سواء في القدرات، في الدراسة، أو في الحياة كُلها.. أنتِ مو لحالك أبداً يا أجمل صدفة بدنيتي!
-                        </p>
+                    // كروت الحظ الثلاثية الأبعاد
+                    html = `
+                        <div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">المرحلة 14 | بطاقات الحظ والإلهام 🃏</div>
+                        <h2 class="text-xl font-bold text-white mb-2">اقلبي الكروت لاكتشاف سر طاقتك اليوم يا رتال:</h2>
+                        <p class="text-xs text-gray-300 mb-4">اضغطي على البطاقة لقلبها ✨</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 my-6">
+                            <div class="card-flip-container cursor-pointer h-32" onclick="this.classList.toggle('flipped'); playSound('magic');">
+                                <div class="card-flip-inner relative w-full h-full rounded-2xl border border-pink-500/40 bg-pink-950/30 flex items-center justify-center p-3">
+                                    <div class="card-front absolute inset-0 flex items-center justify-center font-bold text-pink-300">🃏 بطاقة الحب</div>
+                                    <div class="card-back absolute inset-0 flex items-center justify-center p-3 text-xs font-bold text-white bg-pink-600/40 rounded-2xl border border-pink-400">🌸 أنتِ أحلى وأذكى من في الدنيا!</div>
+                                </div>
+                            </div>
+
+                            <div class="card-flip-container cursor-pointer h-32" onclick="this.classList.toggle('flipped'); playSound('magic');">
+                                <div class="card-flip-inner relative w-full h-full rounded-2xl border border-cyan-500/40 bg-cyan-950/30 flex items-center justify-center p-3">
+                                    <div class="card-front absolute inset-0 flex items-center justify-center font-bold text-cyan-300">🃏 بطاقة التحدي</div>
+                                    <div class="card-back absolute inset-0 flex items-center justify-center p-3 text-xs font-bold text-white bg-cyan-600/40 rounded-2xl border border-cyan-400">⭐ القدرات مجرد محطة وأنتِ القطار السريع!</div>
+                                </div>
+                            </div>
+
+                            <div class="card-flip-container cursor-pointer h-32" onclick="this.classList.toggle('flipped'); playSound('magic');">
+                                <div class="card-flip-inner relative w-full h-full rounded-2xl border border-amber-500/40 bg-amber-950/30 flex items-center justify-center p-3">
+                                    <div class="card-front absolute inset-0 flex items-center justify-center font-bold text-amber-300">🃏 بطاقة الـ 100%</div>
+                                    <div class="card-back absolute inset-0 flex items-center justify-center p-3 text-xs font-bold text-white bg-amber-600/40 rounded-2xl border border-amber-400">👑 نتيجتك العالية تنتظرك لتفرحينا!</div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(15)" class="cute-btn font-bold py-3 px-8 rounded-full">
-                                👉 كمل يا بعد قلبي 🥺
+                            <button onclick="goToStep(15)" class="btn-gold font-bold py-3 px-8 rounded-full">
+                                👉 قلبت الكروت.. واصل! ✨
                             </button>
                         </div>
                     `;
                     break;
 
                 case 15:
-                    contentHTML = `
-                        <div class="text-cyan-400 font-bold tracking-widest text-xs mb-1 uppercase">المرحلة 15 | تحدي الذكاء السريع ⚡</div>
-                        <h2 class="text-xl font-bold mb-4 text-white">سؤال قدرات حنون ومخصص لك:</h2>
-                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-cyan-500/30 text-right mb-6">
-                            <p class="text-pink-300 font-bold mb-2">سؤال الكمي اللطيف:</p>
-                            <p class="text-white text-base">إذا كان حب رتال في قلبي ينقاس بالمايكرو.. فكم يساوي؟</p>
-                        </div>
-                        <div class="flex flex-col gap-3 max-w-sm mx-auto">
-                            <button onclick="goToStep(16)" class="cyan-btn font-bold py-3 px-6 rounded-xl text-sm">أ) يساوي 100%</button>
-                            <button onclick="goToStep(16)" class="cute-btn font-bold py-3 px-6 rounded-xl text-sm">ب) يساوي كل الكون وما فيه ✨</button>
-                            <button onclick="goToStep(16)" class="gold-btn font-bold py-3 px-6 rounded-xl text-sm">ج) ما تكفيه أرقام الدنيا كلها! ♾️</button>
+                    html = `
+                        <div class="text-gold-400 font-bold tracking-widest text-xs uppercase">المرحلة 15 | شحن القوة 🔋</div>
+                        <h2 class="text-xl md:text-2xl font-bold text-white mb-4">ارتفعت معنوياتك الحين يا رتال؟ 🌸</h2>
+                        <div class="flex flex-col sm:flex-row justify-center gap-3 my-4">
+                            <button onclick="goToStep(16)" class="btn-pink font-bold py-3 px-6 rounded-full text-sm">أكيد.. حسيت بفرق كبير! 🤍</button>
+                            <button onclick="goToStep(16)" class="btn-cyan font-bold py-3 px-6 rounded-full text-sm">أبغى أسئلة واختبارات حنونة بعد! 🥺</button>
                         </div>
                     `;
                     break;
 
+                // ================= PHASE 3: الأسئلة التفاعلية والألغاز الحنونة (Steps 16-24) =================
                 case 16:
-                    contentHTML = `
-                        <div class="text-gold-400 font-bold tracking-widest text-xs mb-1 uppercase">الإجابة الصحيحة 💯</div>
-                        <div class="my-3 text-5xl">👑</div>
-                        <h2 class="text-2xl font-bold mb-4 text-gold-300">طبعاً الجواب (ج) بدون تردد! 💖</h2>
-                        <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-6">
-                            شفتي كيف تنجحين بسهولة لما تكون الإجابات عن الحب والجمال؟ والقدرات بعد بتنجحين فيه بنفس السهولة!
-                        </p>
-                        <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(17)" class="gold-btn font-bold py-3 px-8 rounded-full">
-                                👉 يلا نوصل للنهاية العظيمة! ✨
-                            </button>
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 16 | سؤال التناظر العاطفي 📖</div>
+                        <h2 class="text-xl font-bold text-white mb-4">سؤال تناظر لفظي خاص بـ رتال:</h2>
+                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-pink-500/30 text-right mb-6">
+                            <p class="text-pink-300 font-bold mb-2">العلاقة: (رتال : الجمال والذكاء)</p>
+                            <p class="text-gray-300 text-xs">اختر العلاقة المماثلة لها تماماً:</p>
+                        </div>
+                        <div class="flex flex-col gap-3 max-w-sm mx-auto">
+                            <button onclick="goToStep(17)" class="btn-cyan font-bold py-3 px-6 rounded-xl text-sm">أ) القمر : الضياء ✨</button>
+                            <button onclick="goToStep(17)" class="btn-pink font-bold py-3 px-6 rounded-xl text-sm">ب) البحر : العمق 🌊</button>
+                            <button onclick="goToStep(17)" class="btn-gold font-bold py-3 px-6 rounded-xl text-sm">ج) كل ما سبق صحيح تماماً! 👑</button>
                         </div>
                     `;
                     break;
 
                 case 17:
-                    contentHTML = `
-                        <div class="text-pink-400 font-bold tracking-widest text-xs mb-1 uppercase">رسائل السر والسكينة 🌙</div>
-                        <h2 class="text-xl md:text-2xl font-bold mb-4 text-white">اقرئي هذه الجملة بصوت هادئ يا رتال:</h2>
-                        <div class="bg-gradient-to-r from-pink-900/40 via-purple-900/40 to-slate-900/40 p-6 rounded-2xl border border-pink-500/30 text-pink-200 text-lg md:text-xl font-bold leading-relaxed shadow-lg my-6">
-                            "أنا رتال.. قوية، ملهمة، وذكية جداً.. والقدرات خطوة صغيرة في طريقي للقمة 👑✨"
-                        </div>
+                    html = `
+                        <div class="text-gold-400 font-bold tracking-widest text-xs uppercase">المرحلة 17 | الإجابة النموذجية 💯</div>
+                        <div class="my-3 text-4xl">👑</div>
+                        <h2 class="text-2xl font-bold text-gold-300 mb-4">طبعاً الجواب (ج) يا أميرة!</h2>
+                        <p class="text-gray-200 text-sm leading-relaxed mb-6">
+                            شفتي كيف التناظر سهل لما نقيسه بالمنطق والحب؟ وبنفس السهولة بتمشين بالاختبار الحقيقي!
+                        </p>
                         <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(18)" class="cute-btn font-bold py-3 px-8 rounded-full">
-                                👉 قريتها وحسيت بقوتها! 🥹
+                            <button onclick="goToStep(18)" class="btn-purple font-bold py-3 px-8 rounded-full">
+                                👉 سؤال كمي لطيف بعد! 🧮
                             </button>
                         </div>
                     `;
                     break;
 
                 case 18:
-                    contentHTML = `
-                        <div class="text-purple-400 font-bold tracking-widest text-xs mb-1 uppercase">مرحلة العواطف الصافية 🤍</div>
-                        <h2 class="text-xl font-bold mb-4 text-purple-300">رتال… تدرين وش أكثر شيء أحبه لما تبتسمين؟</h2>
-                        <p class="text-gray-200 text-base leading-relaxed mb-6">
-                            إنه العالم كله يصير هادئ وحلو.. ومستعد أسوي كل شيء بدنيتي بس عشان أشوف ابتسامتك وفرحتك يوم نتايج القدرات! 🎓✨
-                        </p>
-                        <div class="flex justify-center mt-6">
-                            <button onclick="goToStep(19)" class="cute-btn font-bold py-3 px-8 rounded-full">
-                                👉 بعد يا حنون؟ 😳
-                            </button>
+                    html = `
+                        <div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">المرحلة 18 | سؤال الحساب السريع 📊</div>
+                        <h2 class="text-xl font-bold text-white mb-4">سؤال كمي حنون لـ رتال:</h2>
+                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-cyan-500/30 text-right mb-6">
+                            <p class="text-cyan-300 font-bold mb-2">المسألة:</p>
+                            <p class="text-white text-sm">إذا كان عدد دعواتي لـ رتال بالتوفيق = 1000 دعوة باليوم، فكم دعوة بتوصلها في 10 أيام؟</p>
+                        </div>
+                        <div class="flex flex-col gap-3 max-w-sm mx-auto">
+                            <button onclick="goToStep(19)" class="btn-cyan font-bold py-3 px-6 rounded-xl text-sm">أ) 10,000 دعوة بالحب 🤍</button>
+                            <button onclick="goToStep(19)" class="btn-pink font-bold py-3 px-6 rounded-xl text-sm">ب) ما لا نهاية من الدعوات ♾️</button>
                         </div>
                     `;
                     break;
 
                 case 19:
-                    contentHTML = `
-                        <div class="text-cyan-400 font-bold tracking-widest text-xs mb-1 uppercase">شحن الطاقة النهائي ⚡</div>
-                        <h2 class="text-xl font-bold mb-4 text-white">قبل ما نوصل للتتويج.. وش حاسّة الحين بعد رحلة الإنقاذ؟</h2>
-                        <div class="flex flex-col gap-3 max-w-sm mx-auto my-6">
-                            <button onclick="goToStep(20)" class="cyan-btn font-bold py-3.5 px-6 rounded-2xl text-sm">
-                                🌟 ارتحت كثير وحسيت بالطاقة والسكينة!
-                            </button>
-                            <button onclick="goToStep(20)" class="cute-btn font-bold py-3.5 px-6 rounded-2xl text-sm">
-                                💖 جاهزة أصنع الـ 100% وأبهرك!
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 19 | النتيجة 🌟</div>
+                        <h2 class="text-2xl font-bold text-pink-300 mb-4">أكيد ما لا نهاية من الدعوات! 🌸</h2>
+                        <p class="text-gray-200 text-sm leading-relaxed mb-6">
+                            كل مسألة لها مفتاح، ومفتاح مسائلك هو الهدوء واليقين بأنك قادرة وتستاهلين الأفضل!
+                        </p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(20)" class="btn-gold font-bold py-3 px-8 rounded-full">
+                                👉 عجلة الحظ السحرية! 🎡
                             </button>
                         </div>
                     `;
                     break;
 
                 case 20:
-                    playSound('magic');
-                    setInterval(spawnParticle, 150);
-                    contentHTML = `
-                        <div class="text-amber-400 font-extrabold tracking-widest text-sm mb-2 uppercase animate-pulse">
-                            👑 تتويج ملكة القدرات والقلب 👑
+                    // لعبة عجلة الحظ السحرية
+                    html = `
+                        <div class="text-amber-400 font-bold tracking-widest text-xs uppercase">المرحلة 20 | عجلة التحفيز السحرية 🎡</div>
+                        <h2 class="text-xl font-bold text-white mb-2">دوري العجلة واكتشفي حظك اليوم بالقدرات!</h2>
+
+                        <div class="my-6 relative w-48 h-48 mx-auto flex items-center justify-center">
+                            <div id="spin-wheel" class="wheel-container w-full h-full rounded-full border-4 border-amber-400 bg-gradient-to-tr from-pink-600 via-purple-600 to-cyan-600 flex items-center justify-center text-5xl shadow-2xl">
+                                🎡
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center gap-3">
+                            <button onclick="spinWheel()" class="btn-gold font-bold py-3 px-8 rounded-full">
+                                🎯 ادر عجلة الحظ الحين!
+                            </button>
+                        </div>
+
+                        <div id="wheel-next-btn" class="hidden flex justify-center mt-6">
+                            <button onclick="goToStep(21)" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 شفت حظي الساحر! كمل 👑
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 21:
+                    html = `
+                        <div class="text-purple-400 font-bold tracking-widest text-xs uppercase">المرحلة 21 | نتيجة عجلة الحظ ✨</div>
+                        <div class="my-3 text-5xl animate-bounce">👑</div>
+                        <h2 class="text-2xl font-bold text-purple-300 mb-4">حظك طلع: "ملكة الـ 100% بدون منازع!"</h2>
+                        <p class="text-gray-200 text-sm leading-relaxed mb-6">
+                            العجلة ما تكذب يا رتال.. هذا نصيب اجتهادك وقلبك النقي 🤍
+                        </p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(22)" class="btn-cyan font-bold py-3 px-8 rounded-full">
+                                👉 وش جاي بعد بالرحلة؟ 🥺
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 22:
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 22 | اختبار الاهتمام 💖</div>
+                        <h2 class="text-xl font-bold text-white mb-4">لو تعبتِ من المذاكرة فجأة.. وش أول شيء تسوينه؟</h2>
+                        <div class="flex flex-col gap-3 max-w-sm mx-auto my-4">
+                            <button onclick="goToStep(23)" class="btn-pink font-bold py-3 px-6 rounded-2xl text-sm">☕ آخذ بريك، أشرب شيء دافئ وأرتاح</button>
+                            <button onclick="goToStep(23)" class="btn-cyan font-bold py-3 px-6 rounded-2xl text-sm">💭 أذكر نفسي إن الجاي أحلى وأكمل بروقان</button>
+                        </div>
+                    `;
+                    break;
+
+                case 23:
+                    html = `
+                        <div class="text-gold-400 font-bold tracking-widest text-xs uppercase">المرحلة 23 | نصيحة ذهبية 🕊️</div>
+                        <h2 class="text-2xl font-bold text-gold-300 mb-4">راحة عقلك أهم من كل شيء!</h2>
+                        <p class="text-gray-200 text-sm leading-relaxed mb-6">
+                            تذكري دايماً: المذاكرة مع الروقان والراحة تعطي نتائج دبل المذاكرة مع التعب والضغط.
+                        </p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(24)" class="btn-purple font-bold py-3 px-8 rounded-full">
+                                👉 كمل محطات التحفيز 👑
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 24:
+                    html = `
+                        <div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">المرحلة 24 | منتصف الرحلة 🌈</div>
+                        <h2 class="text-xl md:text-2xl font-bold text-white mb-4">وصلنا لنصف رحلتنا الملكية يا رتال!</h2>
+                        <p class="text-gray-300 text-sm mb-6">جاهزة ندخل في دروع القوة والتحديات الأقوى؟ ✨</p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(25)" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 جاهزة وبقوة! 💥
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                // ================= PHASE 4: دروع القوة والتمكين الذهني (Steps 25-34) =================
+                case 25:
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 25 | قانون رتال الذهبي 📜</div>
+                        <h2 class="text-xl font-bold text-white mb-4">القانون الأول: لا تقارني نفسك بأحد!</h2>
+                        <div class="bg-pink-950/30 p-5 rounded-2xl border border-pink-500/30 text-right text-xs md:text-sm text-pink-200 leading-relaxed my-4">
+                            أنتِ تمشين بخطواتك الخاصة، وبذكاء فريد يشبهك أنتِ بس. رحلتك ملكية ولا تقارن بأحد! 👑
+                        </div>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(26)" class="btn-cyan font-bold py-3 px-8 rounded-full">
+                                👉 القانون الثاني؟ 📜
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 26:
+                    html = `
+                        <div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">المرحلة 26 | القانون الثاني 📜</div>
+                        <h2 class="text-xl font-bold text-white mb-4">القانون الثاني: الخطأ هو أول طريق الصح!</h2>
+                        <div class="bg-cyan-950/30 p-5 rounded-2xl border border-cyan-500/30 text-right text-xs md:text-sm text-cyan-200 leading-relaxed my-4">
+                            لما تغلطين بسؤال بالتجميعات، افرحي! لأنك عرفتي فكرة جديدة ما راح تغلطين فيها بالاختبار الأساسي 🎯
+                        </div>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(27)" class="btn-gold font-bold py-3 px-8 rounded-full">
+                                👉 القانون الثالث؟ 📜
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 27:
+                    html = `
+                        <div class="text-gold-400 font-bold tracking-widest text-xs uppercase">المرحلة 27 | القانون الثالث 📜</div>
+                        <h2 class="text-xl font-bold text-white mb-4">القانون الثالث: الثقة بالنفس نصف الدرجة!</h2>
+                        <div class="bg-amber-950/30 p-5 rounded-2xl border border-amber-500/30 text-right text-xs md:text-sm text-amber-200 leading-relaxed my-4">
+                            دخولك لمركز الاختبار وأنتِ واثقة ومبتسمة يخلي عقلك يسترجع المعلومات بلمح البصر ⚡
+                        </div>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(28)" class="btn-purple font-bold py-3 px-8 rounded-full">
+                                👉 قانوني الرابع الحنون؟ 🥺
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 28:
+                    html = `
+                        <div class="text-purple-400 font-bold tracking-widest text-xs uppercase">المرحلة 28 | القانون الرابع 📜</div>
+                        <h2 class="text-xl font-bold text-white mb-4">القانون الرابع: أنتِ لستِ وحدك أبداً!</h2>
+                        <div class="bg-purple-950/30 p-5 rounded-2xl border border-purple-500/30 text-right text-xs md:text-sm text-purple-200 leading-relaxed my-4">
+                            في كل سؤال، في كل تجميعة، وفي كل ثانية مذاكرة.. فيه شخص يحبك ويدعمك ويفكر فيك 🤍
+                        </div>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(29)" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 يا بعد قلبي.. كمل! 🥹
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 29:
+                    // مولد التوكيدات التفاعلي
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 29 | مُولّد توكيدات التفوق 🌸</div>
+                        <h2 class="text-xl font-bold text-white mb-2">انقري لإنشاء توكيدك اليومي الخاص:</h2>
+
+                        <div class="bg-slate-900/80 p-6 rounded-2xl border border-pink-500/30 my-6">
+                            <p id="aff-text" class="text-pink-300 font-bold text-lg leading-relaxed">
+                                "اضغطي الزر بالأسفل لاستخراج توكيد التميّز ✨"
+                            </p>
+                        </div>
+
+                        <div class="flex justify-center gap-3">
+                            <button onclick="generateAffirmation()" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                🎲 استخرج توكيداً جديداً!
+                            </button>
+                        </div>
+
+                        <div id="aff-next-btn" class="hidden flex justify-center mt-6">
+                            <button onclick="goToStep(30)" class="btn-cyan font-bold py-3 px-8 rounded-full">
+                                👉 حفظت التوكيد بقلبي.. كمل ✨
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 30:
+                    html = `
+                        <div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">المرحلة 30 | طرد الشكوك 🚫</div>
+                        <h2 class="text-xl font-bold text-white mb-4">لو جاك صوت خفي يقول "الاختبار صعب".. وش تردين؟</h2>
+                        <div class="flex flex-col gap-3 max-w-sm mx-auto my-4">
+                            <button onclick="goToStep(31)" class="btn-cyan font-bold py-3 px-6 rounded-2xl text-sm">🔥 أقول له: أنا رتال وأصعب شيء أخليه سهل!</button>
+                            <button onclick="goToStep(31)" class="btn-pink font-bold py-3 px-6 rounded-2xl text-sm">👑 أبتسم وأتجاهله وأواصل تدريبي بثقة!</button>
+                        </div>
+                    `;
+                    break;
+
+                case 31:
+                    html = `
+                        <div class="text-gold-400 font-bold tracking-widest text-xs uppercase">المرحلة 31 | ردة الفعل الملكية 👑</div>
+                        <div class="my-3 text-4xl">✨</div>
+                        <h2 class="text-2xl font-bold text-gold-300 mb-4">هذه هي روح الملكة الحقيقية!</h2>
+                        <p class="text-gray-200 text-sm leading-relaxed mb-6">
+                            الخوف شائعة، والحقيقة هي اجتهادك وذكائك اللي ينور الطريق.
+                        </p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(32)" class="btn-purple font-bold py-3 px-8 rounded-full">
+                                👉 واصل الدعم والتحفيز! 🥹
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 32:
+                    html = `
+                        <div class="text-purple-400 font-bold tracking-widest text-xs uppercase">المرحلة 32 | رسالة خاصة لـ رتول 💌</div>
+                        <div class="bg-gradient-to-r from-purple-900/40 to-pink-900/40 p-6 rounded-2xl border border-purple-500/30 text-purple-200 text-sm md:text-base leading-relaxed text-right my-4">
+                            "رتال… لو تعرفين كمية الفخر اللي أحس فيها وأنا أشوفك تحاولين وتدرسين رغم التعب.. كنتِ عرفتي إنك أغلى وأعظم شخص بدنيتي 🤍✨"
+                        </div>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(33)" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 يا بعد روحي.. بعد؟ 🥺
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 33:
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 33 | عهد التفوق 💍</div>
+                        <h2 class="text-xl font-bold text-white mb-4">توعديني تناظرين لنفسك ببراعة وفخر؟</h2>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4 my-4">
+                            <button onclick="goToStep(34)" class="btn-pink font-bold py-3 px-8 rounded-full text-sm">✋ أوعدك يا حنوني!</button>
+                        </div>
+                    `;
+                    break;
+
+                case 34:
+                    html = `
+                        <div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">المرحلة 34 | الانطلاق للختام 🚀</div>
+                        <h2 class="text-2xl font-bold text-cyan-300 mb-4">اقتربنا من لحظة التتويج الكبرى!</h2>
+                        <p class="text-gray-200 text-sm leading-relaxed mb-6">
+                            جاهزة ندخل محطات التتويج النهائية وتجهيز شهادة الـ 100%؟ 🎓✨
+                        </p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(35)" class="btn-gold font-bold py-3 px-8 rounded-full">
+                                👉 قدام للتتويج! 🏆
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                // ================= PHASE 5: التتويج النهائي والاحتفال (Steps 35-44) =================
+                case 35:
+                    html = `
+                        <div class="text-gold-400 font-bold tracking-widest text-xs uppercase">المرحلة 35 | بداية التتويج 👑</div>
+                        <h2 class="text-xl font-bold text-white mb-4">جهزي نفسك لاستلام الألقاب الملكية!</h2>
+                        <p class="text-gray-300 text-sm mb-6">أول لقب: "ملكة الصبر والإصرار" 🌸</p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(36)" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 استلم اللقب الثاني! ✨
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 36:
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 36 | اللقب الثاني 👑</div>
+                        <h2 class="text-xl font-bold text-white mb-4">اللقب الثاني: "أذكى طالبة قدرات بالكون"</h2>
+                        <p class="text-gray-300 text-sm mb-6">اللقب الثالث ينتظرك بالخطوة الجاية! 💎</p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(37)" class="btn-cyan font-bold py-3 px-8 rounded-full">
+                                👉 هات اللقب الثالث! 🌟
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 37:
+                    html = `
+                        <div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">المرحلة 37 | اللقب الثالث 👑</div>
+                        <h2 class="text-xl font-bold text-white mb-4">اللقب الثالث: "صاحبة أحلى ابتسامة بالدنيا"</h2>
+                        <p class="text-gray-300 text-sm mb-6">والحين ننتقل للقسم الأهم في الشهادة! 📜</p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(38)" class="btn-purple font-bold py-3 px-8 rounded-full">
+                                👉 واصل يا غالي! 🥹
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 38:
+                    html = `
+                        <div class="text-purple-400 font-bold tracking-widest text-xs uppercase">المرحلة 38 | قسم اليقين 🌟</div>
+                        <h2 class="text-xl font-bold text-white mb-4">كرري معي بثقة:</h2>
+                        <div class="bg-slate-900/80 p-5 rounded-2xl border border-purple-500/30 text-purple-200 text-base font-bold my-4">
+                            "أنا رتال.. سأبدع، سأنجح، وسأصنع الـ 100% بإذن الله 👑✨"
+                        </div>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(39)" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 تم التكرار بثقة عالية! 🔥
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 39:
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase">المرحلة 39 | تحضير الألعاب النارية 🎆</div>
+                        <h2 class="text-xl font-bold text-white mb-4">تجهيز ساحة التتويج الكبرى..</h2>
+                        <p class="text-gray-300 text-sm mb-6">اضغطي للبدء بتشغيل التأثيرات الملكية! ✨</p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(40); playSound('win');" class="btn-gold font-bold py-3 px-8 rounded-full animate-bounce">
+                                🎆 ابدأ الاحتفال!
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 40:
+                    html = `
+                        <div class="text-amber-400 font-bold tracking-widest text-xs uppercase">المرحلة 40 | الألعاب النارية 🎇</div>
+                        <div class="my-4 text-6xl animate-pulse">🎉✨</div>
+                        <h2 class="text-2xl font-bold text-amber-300 mb-4">الكون كله يحتفل بك يا رتال!</h2>
+                        <p class="text-gray-200 text-sm mb-6">أنتِ مفخرة وأمل وأجمل سر بالوجود 🤍</p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(41)" class="btn-cyan font-bold py-3 px-8 rounded-full">
+                                👉 الخطوة قبل الأخيرة! 🎓
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 41:
+                    html = `
+                        <div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">المرحلة 41 | اللمسات الأخيرة ✍️</div>
+                        <h2 class="text-xl font-bold text-white mb-4">توقيع الشهادة الملكية باسم رتال..</h2>
+                        <div class="my-4 text-4xl">📜✍️</div>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(42); playSound('magic');" class="btn-pink font-bold py-3 px-8 rounded-full">
+                                👉 جاهزة لاستلام شهادتك! 🏆
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 42:
+                    html = `
+                        <div class="text-gold-400 font-bold tracking-widest text-xs uppercase">المرحلة 42 | تسليم الشهادة 🎓</div>
+                        <h2 class="text-2xl font-bold text-gold-300 mb-4">الشهادة جاهزة للعرض يا ملكة!</h2>
+                        <p class="text-gray-200 text-sm mb-6">اضغطي الزر بالأسفل لفتح الوثيقة الكبرى ✨</p>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(43)" class="btn-gold font-extrabold py-3.5 px-10 rounded-full text-base animate-pulse">
+                                🏆 فتح شهادة الـ 100% لـ رتال
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 43:
+                    html = `
+                        <div class="text-pink-400 font-bold tracking-widest text-xs uppercase mb-1">المرحلة 43 | الرسالة النهائية 🤍</div>
+                        <h2 class="text-2xl font-bold text-white mb-4">رسالتي الأبديّة لك يا رتال:</h2>
+                        <div class="bg-gradient-to-r from-pink-950/50 via-purple-950/50 to-slate-900/50 p-6 rounded-2xl border border-pink-500/40 text-gray-100 text-sm md:text-base leading-relaxed text-right my-4">
+                            "مهما كانت صعوبة الطريق، ومهما كانت زحمة القدرات، تذكري إن فيه شخص يشوفك أعظم وأجمل إنجاز بحياته. ادرسي بهدوء، تنفسي براحة، وكوني واثقة إن الـ 100% مكتوبة لقلبك الجميل 🌸✨"
+                        </div>
+                        <div class="flex justify-center mt-6">
+                            <button onclick="goToStep(44); playSound('win');" class="btn-pink font-extrabold py-3.5 px-10 rounded-full text-base">
+                                👑 الانتقال للتتويج الأسطوري التام
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 44:
+                    // المرحلة 44 النهائية الكبرى
+                    playSound('win');
+                    setInterval(spawnParticle, 100);
+                    html = `
+                        <div class="text-amber-400 font-extrabold tracking-widest text-xs mb-2 uppercase animate-pulse">
+                            👑 التتويج النهائي والأسطوري 👑
                         </div>
                         
-                        <div class="my-4 text-6xl animate-bounce">🎓✨</div>
+                        <div class="my-3 text-6xl animate-bounce">🎓✨</div>
 
-                        <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4 neon-glow-pink">
+                        <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3 neon-text-pink">
                             رتال.. ملكة الـ 100% 💖
                         </h1>
 
-                        <div class="space-y-3 text-base md:text-lg text-gray-100 font-medium leading-relaxed my-6 bg-slate-900/80 p-6 rounded-2xl border-2 border-pink-500/40 shadow-[0_0_35px_rgba(244,114,182,0.3)]">
+                        <div class="space-y-3 text-sm md:text-base text-gray-100 font-medium leading-relaxed my-4 bg-slate-900/90 p-5 rounded-2xl border-2 border-pink-500/40 shadow-[0_0_35px_rgba(244,114,182,0.3)]">
                             <p class="text-pink-300 font-bold">"أنتِ مو بس بتعدين القدرات.."</p>
                             <p class="text-cyan-300">"أنتِ بتثبتين للعالم كله كم أنتِ عظيمة ومستحيلة!"</p>
-                            <p class="text-amber-300 font-bold">"أحبك يا رتال.. وأنا بجانبك دائماً وأبداً 🤍✨"</p>
+                            <p class="text-amber-300 font-bold">"أحبك يا رتال.. وأنا معك وسندك دائماً وأبداً 🤍✨"</p>
                         </div>
 
-                        <!-- شهادة المحبة والتميز -->
-                        <div class="bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-cyan-500/20 border-2 border-dashed border-amber-400 p-4 rounded-xl text-xs md:text-sm text-amber-200">
-                            📜 <span class="font-bold">وثيقة فخر:</span> تُمنح رتال لقب "أشجع وأجمل طالبة قدرات" بحب لا ينتهي! 🏆
+                        <!-- شهادة التميز الملكية -->
+                        <div class="bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-cyan-500/20 border-2 border-dashed border-amber-400 p-4 rounded-2xl text-xs md:text-sm text-amber-200 shadow-xl my-4">
+                            📜 <span class="font-bold text-amber-300 block text-sm mb-1">وثيقة التميز الأسطورية:</span>
+                            تُمنح الملكة <span class="font-bold text-pink-300">رتال</span> درجة الـ 100% واللقب الأبدي "أشجع طالبة قدرات" بحب ودعم لا ينتهي! 🏆✨
                         </div>
 
-                        <div class="flex flex-col sm:flex-row justify-center gap-3 mt-8">
-                            <button onclick="restartApp()" class="cute-btn font-bold py-3 px-8 rounded-full text-sm">
-                                ↺ إعادة رحلة الحب والتحفيز
+                        <div class="flex justify-center gap-3 mt-6">
+                            <button onclick="restartApp()" class="btn-pink font-bold py-3 px-8 rounded-full text-xs">
+                                ↺ إعادة الرحلة من البداية 🌸
                             </button>
                         </div>
                     `;
                     break;
             }
 
-            container.innerHTML = contentHTML;
+            container.innerHTML = html;
         }
 
-        // === وظائف تفاعلية داخل المراحل ===
-        function boostOxygen() {
-            playSound('heart');
-            state.oxygenLevel += 25;
-            if (state.oxygenLevel > 100) state.oxygenLevel = 100;
-            const valEl = document.getElementById('oxygen-val');
-            if (valEl) valEl.innerText = state.oxygenLevel + '%';
-            
-            for(let i=0; i<4; i++) { setTimeout(spawnParticle, i*80); }
+        // === منطق الألعاب التفاعلية داخل المراحل ===
+        function popBubble(id) {
+            playSound('pop');
+            const b = document.getElementById(`bubble-${id}`);
+            if (b && !b.classList.contains('popped')) {
+                b.classList.add('popped');
+                b.style.opacity = '0.2';
+                b.style.transform = 'scale(0.5)';
+                appData.bubblesPopped++;
+                const countEl = document.getElementById('pop-count');
+                if (countEl) countEl.innerText = appData.bubblesPopped;
 
-            if (state.oxygenLevel >= 100) {
-                const nextBtn = document.getElementById('oxygen-next-btn');
-                if (nextBtn) nextBtn.classList.remove('hidden');
+                if (appData.bubblesPopped >= 6) {
+                    const btn = document.getElementById('pop-next-btn');
+                    if (btn) btn.classList.remove('hidden');
+                }
             }
         }
 
-        function flipCard(el) {
+        function catchStar() {
+            playSound('pop');
+            appData.starsCaught++;
+            const countEl = document.getElementById('star-count');
+            if (countEl) countEl.innerText = appData.starsCaught;
+
+            const starEl = document.getElementById('clickable-star');
+            if (starEl) {
+                starEl.style.top = Math.random() * 60 + 10 + '%';
+                starEl.style.left = Math.random() * 70 + 10 + '%';
+            }
+
+            if (appData.starsCaught >= 5) {
+                const btn = document.getElementById('star-next-btn');
+                if (btn) btn.classList.remove('hidden');
+            }
+        }
+
+        let firstMemCard = null;
+        function flipMemCard(el, icon) {
+            if (el.innerText !== '❓') return;
+            playSound('click');
+            el.innerText = icon;
+
+            if (!firstMemCard) {
+                firstMemCard = { el, icon };
+            } else {
+                if (firstMemCard.icon === icon) {
+                    playSound('magic');
+                    appData.memoryMatches++;
+                    firstMemCard = null;
+                    const countEl = document.getElementById('mem-count');
+                    if (countEl) countEl.innerText = appData.memoryMatches;
+
+                    if (appData.memoryMatches >= 2) {
+                        const btn = document.getElementById('mem-next-btn');
+                        if (btn) btn.classList.remove('hidden');
+                    }
+                } else {
+                    setTimeout(() => {
+                        el.innerText = '❓';
+                        if (firstMemCard) firstMemCard.el.innerText = '❓';
+                        firstMemCard = null;
+                    }, 500);
+                }
+            }
+        }
+
+        function spinWheel() {
             playSound('magic');
-            el.classList.toggle('flipped');
-            state.cardsFlipped++;
+            const wheel = document.getElementById('spin-wheel');
+            if (wheel) {
+                wheel.style.transform = `rotate(${1440 + Math.random() * 360}deg)`;
+                setTimeout(() => {
+                    playSound('win');
+                    const btn = document.getElementById('wheel-next-btn');
+                    if (btn) btn.classList.remove('hidden');
+                }, 3500);
+            }
+        }
+
+        const affirmations = [
+            "أنا رتال.. عقلي يستوعب كل المعلومات بهدوء وذكاء ✨",
+            "اختبار القدرات خطوة بسيطة في طريقي للنجاح الكبير 👑",
+            "أنا قوية، ملهمة، وتستحق نتيجتي الـ 100% 🌸",
+            "مع كل سؤال أحله بثقة، أقترب أكثر من حلمي التام 💎"
+        ];
+        function generateAffirmation() {
+            playSound('magic');
+            appData.affirmationCount++;
+            const textEl = document.getElementById('aff-text');
+            if (textEl) {
+                textEl.innerText = affirmations[appData.affirmationCount % affirmations.length];
+            }
+            const btn = document.getElementById('aff-next-btn');
+            if (btn) btn.classList.remove('hidden');
         }
 
         function restartApp() {
@@ -861,14 +1320,14 @@
             bgMusic.currentTime = 0;
             isMusicPlaying = false;
             document.getElementById('music-icon').innerText = "🎵";
-            document.getElementById('music-status').innerText = "انقر لتشغيل الأغنية";
+            document.getElementById('music-status').innerText = "انقري لتشغيل الأغنية";
             currentStep = 1;
-            state.oxygenLevel = 0;
-            state.cardsFlipped = 0;
+            appData.bubblesPopped = 0;
+            appData.starsCaught = 0;
+            appData.memoryMatches = 0;
             renderStep();
         }
 
-        // بدء التشغيل
         window.onload = function() {
             renderStep();
         };
